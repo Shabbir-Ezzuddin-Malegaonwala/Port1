@@ -26,7 +26,7 @@ export function ProofStrip() {
         </Reveal>
       </div>
 
-      <div className="mx-auto mt-8 grid max-w-6xl grid-cols-2 gap-px bg-hairline sm:grid-cols-3 lg:grid-cols-5">
+      <div className="mx-auto mt-8 grid max-w-6xl grid-cols-1 gap-px bg-hairline sm:grid-cols-2 lg:grid-cols-4">
         {proofMetrics.map((m, i) => {
           const Icon = PROOF_ICONS[i % PROOF_ICONS.length];
           return (

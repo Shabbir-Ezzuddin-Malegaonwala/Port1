@@ -35,31 +35,32 @@ export const profile = {
 } as const;
 
 /** Section 02: numbers before claims. */
+/**
+ * Outcome and judgment metrics, deliberately not activity counts. Lines of
+ * code, raw record counts and bare test-pass numbers read as effort, not
+ * impact, so none of those lead here even though they are all true and
+ * cited in detail inside the relevant case studies.
+ */
 export const proofMetrics: Metric[] = [
   {
-    value: "52,647",
-    label: "Property listings engineered",
-    note: "6 portals, deduplicated",
+    value: "67%",
+    label: "Real LLM cost cut, verified against live traces",
+    note: "corrected a 90% claim with evidence",
   },
   {
-    value: "13/13",
-    label: "Regression tests on a merged PR",
-    note: "byte-identical output",
+    value: "Zero",
+    label: "Output drift in a refactor merged to production",
+    note: "reviewed by a senior engineer, shipped",
   },
   {
-    value: "4,722",
-    label: "Lines shipped across 3 repos",
-    note: "single feature",
+    value: "6 → 1",
+    label: "Scraped sources reconciled into one explainable engine",
+    note: "every number traces to its source, no black box",
   },
   {
-    value: "51,532",
-    label: "Records profiled and re-schemad",
-    note: "92-column rebuild",
-  },
-  {
-    value: "10+",
-    label: "ML models built and deployed",
-    note: "regression and classification",
+    value: "4",
+    label: "Industries shipped production systems in",
+    note: "real estate, operations, SME automation, finance",
   },
 ];
 
