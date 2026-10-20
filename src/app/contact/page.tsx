@@ -67,7 +67,7 @@ export default function ContactPage() {
           <span className="accent"> email.</span>
         </h1>
 
-        <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-muted">
+        <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-muted text-justify hyphens-auto">
           I read everything and reply to anything that is not a template. If you
           are hiring, a line about the actual problem your team is stuck on gets
           my attention faster than a job title.

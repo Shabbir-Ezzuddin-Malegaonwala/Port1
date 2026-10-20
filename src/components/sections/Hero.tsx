@@ -33,7 +33,7 @@ export function Hero() {
             </span>
           </h1>
 
-          <p className="mt-8 max-w-xl text-pretty leading-relaxed text-muted">
+          <p className="mt-8 max-w-xl text-pretty leading-relaxed text-muted text-justify hyphens-auto">
             I build AI agents and multi-agent bots, workflow automation, and
             full-stack AI applications, so your systems run themselves. One
             touch or one voice, and the result appears.

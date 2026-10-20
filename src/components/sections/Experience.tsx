@@ -52,7 +52,7 @@ export function Experience() {
                 <span className="hud mt-1 shrink-0 text-gold/70">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <span className="max-w-2xl text-pretty text-sm leading-relaxed text-ink/85">
+                <span className="max-w-2xl text-pretty text-sm leading-relaxed text-ink/85 text-justify hyphens-auto">
                   {h}
                 </span>
               </li>

@@ -78,7 +78,7 @@ export default async function CaseStudyPage({
           {study.title}
         </h1>
         <p className="accent mt-3 text-2xl">{study.kicker}</p>
-        <p className="mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-ink/85">
+        <p className="mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-ink/85 text-justify hyphens-auto">
           {study.summary}
         </p>
 
@@ -95,13 +95,13 @@ export default async function CaseStudyPage({
       </header>
 
       <Section index="01" label="Context">
-        <p className="max-w-2xl text-pretty text-lg leading-relaxed text-ink/85">
+        <p className="max-w-2xl text-pretty text-lg leading-relaxed text-ink/85 text-justify hyphens-auto">
           {study.context}
         </p>
       </Section>
 
       <Section index="02" label="The problem">
-        <p className="max-w-2xl text-pretty text-lg leading-relaxed text-ink/85">
+        <p className="max-w-2xl text-pretty text-lg leading-relaxed text-ink/85 text-justify hyphens-auto">
           {study.problem}
         </p>
       </Section>
@@ -113,7 +113,7 @@ export default async function CaseStudyPage({
               <span className="hud mt-1 shrink-0 text-gold/70">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <span className="text-pretty leading-relaxed text-ink/85">
+              <span className="text-pretty leading-relaxed text-ink/85 text-justify hyphens-auto">
                 {b}
               </span>
             </li>
@@ -135,7 +135,7 @@ export default async function CaseStudyPage({
               <h3 className="text-lg font-semibold tracking-[-0.02em]">
                 {d.title}
               </h3>
-              <p className="mt-3 text-pretty leading-relaxed text-muted">
+              <p className="mt-3 text-pretty leading-relaxed text-muted text-justify hyphens-auto">
                 {d.body}
               </p>
             </div>
@@ -170,7 +170,7 @@ export default async function CaseStudyPage({
                   className="mt-2.5 size-1 shrink-0 bg-gold/60"
                   aria-hidden
                 />
-                <span className="text-pretty text-sm leading-relaxed text-ink/80">
+                <span className="text-pretty text-sm leading-relaxed text-ink/80 text-justify hyphens-auto">
                   {l}
                 </span>
               </li>

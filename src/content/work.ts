@@ -163,8 +163,8 @@ export const caseStudies: CaseStudy[] = [
     },
     decisions: [
       {
-        title: "No machine learning, on purpose",
-        body: "This is the decision I defend most often, so it goes first. Jordan publishes no unit-level transaction prices, which means there is no label to train against. A model fitted on asking prices learns what sellers hope for, not what buyers pay, and it hides that behind a confident number. A transparent appraisal grid is weaker on paper and stronger in a board room, because every adjustment can be pointed at and argued with.",
+        title: "No trained machine learning model, on purpose",
+        body: "This is the decision I defend most often, so it goes first. Jordan publishes no unit-level transaction prices, which means there is no label to train against. A model fitted on asking prices learns what sellers hope for, not what buyers pay, and it hides that behind a confident number. A transparent appraisal grid is weaker on paper and stronger in a board room, because every adjustment can be pointed at and argued with. The comparable-selection step is conceptually close to k-nearest-neighbours, a similarity-ranked search over size, recency, attribute match and distance, but it is hand-written Python, not a fitted scikit-learn model: the similarity score ranks the shortlist, while the actual price comes from the adjustment grid afterward, exactly as the client's own methodology prescribes.",
       },
       {
         title: "Pure Python, no numpy or pandas",
@@ -1077,6 +1077,12 @@ export const caseStudies: CaseStudy[] = [
     limitations: [
       "Built against a seeded sample dataset of 300 transactions. It has not been exercised against the data volumes or edge cases of a real multi-year transaction history.",
       "A benchmark assignment, not a commercial product: no billing, no multi-organisation tenancy, no production monitoring.",
+    ],
+    links: [
+      {
+        label: "Loopr Finance on GitHub",
+        href: "https://github.com/Shabbir-Ezzuddin-Malegaonwala/Finance",
+      },
     ],
   },
 ];

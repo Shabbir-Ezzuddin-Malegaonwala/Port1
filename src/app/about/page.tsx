@@ -52,7 +52,7 @@ export default function AboutPage() {
           {profile.bio.map((para) => (
             <p
               key={para.slice(0, 32)}
-              className="text-pretty text-lg leading-relaxed text-ink/85"
+              className="text-pretty text-lg leading-relaxed text-ink/85 text-justify hyphens-auto"
             >
               {para}
             </p>
@@ -117,7 +117,7 @@ export default function AboutPage() {
           </div>
 
           <div>
-            <p className="text-pretty text-lg leading-relaxed text-ink/85">
+            <p className="text-pretty text-lg leading-relaxed text-ink/85 text-justify hyphens-auto">
               I have hosted and anchored annual college programmes, competed in
               the Smart India Hackathon, and spent a lot of time explaining
               technical systems to people who do not read code. That is not a

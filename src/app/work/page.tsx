@@ -24,7 +24,7 @@ export default function WorkPage() {
           Everything here
           <span className="accent"> actually got built.</span>
         </h1>
-        <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted">
+        <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted text-justify hyphens-auto">
           Each case study covers the architecture, the decisions I would defend
           in a review, the measured results, and a section on what the system
           still cannot do.
