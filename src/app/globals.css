@@ -1,26 +1,437 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ==========================================================================
+   SEM Corp — "Cinematic Night"
+   Design system generated in Google Stitch and transcribed here as the
+   authority for the build. Midnight navy canvas, champagne gold treated as
+   practical rim light, hairline dividers, zero border-radius, letterbox rhythm.
+   ========================================================================== */
+
+:root,
+[data-theme="dark"] {
+  --canvas: #060913;
+  --elevated: #0b1120;
+  --overlay: #11192c;
+  --hairline: #1a2338;
+  --hairline-strong: #273046;
+
+  --ink: #f3efe6; /* warm parchment */
+  --ink-cool: #c5ceea;
+  --muted: #8e99b5;
+  --faint: #4a5568;
+
+  --gold: #d4af37;
+  --gold-bright: #e5c365;
+  --gold-dim: #735c00;
+  --gold-rgb: 212 175 55;
+
+  --live: #6f8f6a;
+  --shadow: 0 24px 48px -12px rgb(2 4 8 / 0.85);
+}
+
+[data-theme="light"] {
+  --canvas: #f3efe6;
+  --elevated: #faf7f0;
+  --overlay: #fffdf8;
+  --hairline: #ddd3bf;
+  --hairline-strong: #c4b89c;
+
+  --ink: #060913;
+  --ink-cool: #1b2338;
+  --muted: #5a6578;
+  --faint: #8b93a4;
+
+  --gold: #8a6d1f;
+  --gold-bright: #6f5616;
+  --gold-dim: #b9a05c;
+  --gold-rgb: 138 109 31;
+
+  --live: #4a6f4d;
+  --shadow: 0 24px 48px -16px rgb(17 25 44 / 0.18);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-canvas: var(--canvas);
+  --color-elevated: var(--elevated);
+  --color-overlay: var(--overlay);
+  --color-hairline: var(--hairline);
+  --color-hairline-strong: var(--hairline-strong);
+  --color-ink: var(--ink);
+  --color-ink-cool: var(--ink-cool);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-gold: var(--gold);
+  --color-gold-bright: var(--gold-bright);
+  --color-gold-dim: var(--gold-dim);
+  --color-live: var(--live);
+
+  --font-display: var(--font-newsreader), ui-serif, Georgia, serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-space-mono), ui-monospace, SFMono-Regular, monospace;
+
+  --ease-reveal: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-load: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ==========================================================================
+   Base
+   Literal hex on html: Tailwind v4 can tree-shake theme vars out of plain CSS,
+   which leaves the page ground transparent. Do not replace these with var().
+   ========================================================================== */
+
+html {
+  background: #060913;
+  color: #f3efe6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html[data-theme="light"] {
+  background: #f3efe6;
+  color: #060913;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--canvas);
+}
+
+:focus-visible {
+  outline: 1px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   Typography primitives
+   ========================================================================== */
+
+.display {
+  font-family: var(--font-newsreader), ui-serif, Georgia, serif;
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+/* The signature move: one italic gold phrase inside a serif headline. */
+.accent {
+  font-family: var(--font-newsreader), ui-serif, Georgia, serif;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gold);
+}
+
+.hud {
+  font-family: var(--font-space-mono), ui-monospace, monospace;
+  font-size: 0.625rem;
+  font-weight: 400;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.tabular {
+  font-family: var(--font-space-mono), ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  letter-spacing: -0.01em;
+}
+
+/* ==========================================================================
+   Structure — hairlines, letterbox frames, corner brackets
+   ========================================================================== */
+
+.rule {
+  height: 1px;
+  background: var(--hairline);
+}
+
+.rule-fade {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    var(--hairline-strong),
+    var(--hairline) 40%,
+    transparent
+  );
+}
+
+/* Cards and panels: flat, hairline-bounded, square. */
+.panel {
+  background: var(--elevated);
+  border: 1px solid var(--hairline);
+  position: relative;
+}
+
+/* Gold hairline illumination along the top edge of an active container. */
+.lit::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgb(var(--gold-rgb) / 0.5) 0%,
+    rgb(var(--gold-rgb) / 0) 62%
+  );
+  pointer-events: none;
+}
+
+/* Engraved corner crosshairs on cinematic frames. */
+.brackets::before,
+.brackets::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-color: var(--gold);
+  pointer-events: none;
+  opacity: 0.9;
+  /* Pseudo-elements sit behind children by default; lift them over the image. */
+  z-index: 2;
+}
+
+.brackets::before {
+  top: 5px;
+  left: 5px;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+
+.brackets::after {
+  bottom: 5px;
+  right: 5px;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+
+.radial-lift {
+  background-image: radial-gradient(
+    ellipse at 50% 0%,
+    rgb(var(--gold-rgb) / 0.05) 0%,
+    transparent 70%
+  );
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.03;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ==========================================================================
+   Controls
+   ========================================================================== */
+
+.btn-primary {
+  font-family: var(--font-space-mono), ui-monospace, monospace;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: #060913;
+  padding: 0.95rem 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition:
+    background 0.35s var(--ease-reveal),
+    box-shadow 0.35s var(--ease-reveal);
+}
+
+.btn-primary:hover {
+  background: var(--gold-bright);
+  box-shadow: 0 0 12px rgb(var(--gold-rgb) / 0.25);
+}
+
+.btn-ghost {
+  font-family: var(--font-space-mono), ui-monospace, monospace;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--hairline);
+  padding: 0.95rem 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition:
+    border-color 0.35s var(--ease-reveal),
+    background 0.35s var(--ease-reveal);
+}
+
+.btn-ghost:hover {
+  border-color: var(--gold);
+  background: rgb(var(--gold-rgb) / 0.05);
+}
+
+.chip {
+  font-family: var(--font-space-mono), ui-monospace, monospace;
+  font-size: 0.5625rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-cool);
+  border: 1px solid var(--hairline);
+  background: color-mix(in srgb, var(--elevated) 80%, transparent);
+  padding: 0.4rem 0.6rem;
+  white-space: nowrap;
+}
+
+/* Editorial link: hairline rule offset below, warms and extends on hover. */
+.link-rule {
+  position: relative;
+  color: var(--ink);
+  transition: color 0.3s var(--ease-reveal);
+}
+
+.link-rule::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 1.75rem;
+  height: 1px;
+  background: var(--hairline-strong);
+  transition:
+    width 0.4s var(--ease-reveal),
+    background 0.4s var(--ease-reveal);
+}
+
+.link-rule:hover {
+  color: var(--gold);
+}
+
+.link-rule:hover::after {
+  width: 100%;
+  background: var(--gold);
+}
+
+/* Ledger rows: hairline-separated index, warms on hover. */
+.ledger-row {
+  border-top: 1px solid var(--hairline);
+  padding-block: 1.25rem;
+  transition: background 0.35s var(--ease-reveal);
+}
+
+.ledger-row:last-child {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.ledger-row:hover {
+  background: rgb(var(--gold-rgb) / 0.03);
+}
+
+/* Theme toggle: both icons render, CSS picks one. Stacked so the button
+   does not change size between themes. */
+.icon-light,
+.icon-dark {
+  grid-area: 1 / 1;
+}
+
+.icon-dark {
+  display: none;
+}
+
+[data-theme="light"] .icon-light {
+  display: none;
+}
+
+[data-theme="light"] .icon-dark {
+  display: block;
+}
+
+/* ==========================================================================
+   Motion
+   ========================================================================== */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise {
+  animation: rise 1s var(--ease-load) both;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.35;
+  }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2.6s var(--ease-reveal) infinite;
+}
+
+/* Scroll reveal. Class-driven so the no-JS fallback in layout can override. */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.9s var(--ease-reveal),
+    transform 0.9s var(--ease-reveal);
+}
+
+.reveal-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
 }

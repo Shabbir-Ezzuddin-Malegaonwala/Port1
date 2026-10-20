@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SEM Corp. — Shabbir Malegaonwala
 
-## Getting Started
+Personal portfolio of **Shabbir Malegaonwala**, AI Engineer — AI agents and multi-agent bots,
+workflow automation, and full-stack AI applications.
 
-First, run the development server:
+Six case studies with real architecture, measured results, and an honest limitations section
+on each one.
+
+The CV is deliberately **not** committed — it carries personal details, so the site asks
+visitors to request it by email instead.
+
+---
+
+## Stack
+
+| | |
+|---|---|
+| Framework | Next.js 16 (App Router) + React 19 + TypeScript |
+| Styling | Tailwind CSS v4, tokens in `src/app/globals.css` |
+| Motion | CSS transitions + IntersectionObserver · Lenis for inertia scroll |
+| Fonts | Newsreader · Manrope · Space Mono, self-hosted via `next/font` |
+| Icons | lucide-react, plus inline brand SVGs |
+| Hosting | Vercel |
+
+No CMS, no database, no analytics SDK, no animation library. Every route is static.
+
+The design system ("Cinematic Night") was generated in **Google Stitch** and transcribed into
+`globals.css`. See `CLAUDE.md` for the rules that keep it intact, and `BUILD-PLAN.md` for how
+the whole thing was specified.
+
+---
+
+## Running it
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
+npm run build   # production build — all routes prerender static
+npm start       # serve the production build
+npm run lint
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deploying to Vercel
 
-## Learn More
+Zero configuration. No environment variables.
 
-To learn more about Next.js, take a look at the following resources:
+1. Push this repository to GitHub.
+2. Go to [vercel.com/new](https://vercel.com/new) and import it.
+3. Vercel detects Next.js and fills in everything. Press **Deploy**.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Every later `git push` redeploys automatically; pull requests get preview URLs.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+After the first deploy, set the real domain in `src/content/profile.ts` → `siteUrl`, so the
+sitemap, canonical URLs and social cards point at the right place.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Where the content lives
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+All facts are typed TypeScript — no JSX, no CMS:
+
+| File | Holds |
+|---|---|
+| `src/content/profile.ts` | name, bio, links, proof metrics, capability pillars |
+| `src/content/work.ts` | the six case studies and the smaller builds |
+| `src/content/career.ts` | experience, education, stack, certifications, languages |
+
+Adding a case study is one entry in `work.ts`. The route, the index page card, the sitemap and
+the metadata all follow from it.
+
+---
+
+## Structure
+
+```
+src/
+├─ app/                 routes, sitemap, robots, OG image
+├─ components/
+│  ├─ sections/         home page sections
+│  ├─ work/             case-study pieces
+│  ├─ layout/           navbar, footer, section header
+│  └─ ui/               reusable primitives
+├─ content/             all facts
+└─ lib/                 types, utils
+```
+
+---
+
+## Checks that must pass
+
+```bash
+npx tsc --noEmit
+npm run lint
+npm run build
+```
+
+Verified at 390px, 768px and 1440px in both light and dark themes: no horizontal overflow,
+one `h1` per route, alt text on every image, an accessible name on every link, visible focus
+rings, and `prefers-reduced-motion` honoured throughout.
+
+---
+
+## Optional assets
+
+`ASSETS-TO-GENERATE.md` lists the optional upgrades — a SEM Corp. monogram, a working
+portrait, cinematic hero video — with the exact tools, prompts and target sizes. The site is
+complete without any of them.
