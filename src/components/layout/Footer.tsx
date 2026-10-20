@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { Mail } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/ui/BrandIcons";
+import {
+  GithubIcon,
+  InstagramIcon,
+  LinkedinIcon,
+} from "@/components/ui/BrandIcons";
 import { profile } from "@/content/profile";
 
 const NAV = [
@@ -68,6 +72,17 @@ export function Footer() {
                   >
                     <LinkedinIcon className="size-4" />
                     LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={profile.instagram}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-ink"
+                  >
+                    <InstagramIcon className="size-4" />
+                    Instagram
                   </a>
                 </li>
                 <li>

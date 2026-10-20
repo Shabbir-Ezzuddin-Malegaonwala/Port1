@@ -2,8 +2,90 @@ import type { CaseStudy, SideProject } from "@/lib/types";
 
 export const caseStudies: CaseStudy[] = [
   {
-    slug: "jordan-valuation-engine",
+    slug: "digivyapar",
     index: "01",
+    title: "Digivyapar",
+    kicker: "Business automation for India's small businesses",
+    summary:
+      "A live AI chat interface for Indian MSMEs: invoicing, inventory, expenses and marketing, run from a single Telegram conversation. My contribution was the AI automation layer.",
+    year: "2026",
+    role: "AI automation engineer, team of 3",
+    status: "Live, team project",
+    featured: true,
+    span: "wide",
+    stack: [
+      "n8n",
+      "Telegram Bot API",
+      "Document OCR",
+      "Voice transcription",
+      "Prompt engineering",
+      "Docker",
+    ],
+    context:
+      "Over 63 million Indian MSMEs run on notebooks, WhatsApp chats and manual effort: no CRM, no structured data, no automation. With Hussein Saifee Petladwala and Siddhant Tripathi, I set out to put that daily operational work behind one chat conversation instead of a dashboard nobody would open.",
+    problem:
+      "A small business owner will not learn a new app. Whatever we built had to live inside a channel they already check every day, and had to turn a photo or a spoken sentence directly into a finished business action, not a ticket for someone else to process later.",
+    built: [
+      "An invoice-capture workflow: the owner photographs a paper invoice on Telegram and it comes back as a structured, logged record, removing a manual data-entry step that was eating hours every week.",
+      "A Telegram-based voice sales agent that takes a spoken lead straight from the owner's voice note and runs it through qualification without any typing.",
+      "A business-operations-manager workflow giving the owner one place to edit and manage daily operational data from simple chat commands.",
+      "An automated social-media posting pipeline that drafts and schedules posts with AI-generated captions, aimed directly at the inconsistent-marketing problem the team identified as the second-largest drag on revenue.",
+      "All of it orchestrated on a self-hosted n8n instance, so the business logic lives in version-controlled workflow definitions a teammate can read and edit, not scattered scripts only one person understands.",
+    ],
+    architecture: {
+      caption:
+        "Telegram is the only interface the owner sees. Everything else runs behind it on self-hosted workflows.",
+      layers: [
+        {
+          label: "Channel",
+          nodes: ["Telegram", "Photo", "Voice note", "Text"],
+        },
+        { label: "Capture", nodes: ["Invoice OCR", "Voice transcription"] },
+        {
+          label: "Orchestrate",
+          nodes: ["Self-hosted n8n", "Version-controlled workflows"],
+        },
+        {
+          label: "Operate",
+          nodes: ["Business-ops manager", "Auto social posting"],
+        },
+        { label: "Replace", nodes: ["Notebooks", "Scattered WhatsApp chats"] },
+      ],
+    },
+    decisions: [
+      {
+        title: "Meet the owner inside a channel they already use",
+        body: "The fastest way to lose a small-business user is to ask them to learn a new app. Telegram was already open on their phone all day, so that is where every automation lives. The product is the workflow, not a new piece of software to adopt.",
+      },
+      {
+        title: "Workflow-as-config over a bespoke backend",
+        body: "Choosing n8n instead of writing a custom backend was deliberate. It meant the actual business logic stayed inspectable and editable by a non-engineer teammate, not buried in application code only one person could touch. The trade-off is in the limitations below, and I would make the same call again for a team this size.",
+      },
+      {
+        title: "Ship the two highest-hour problems first",
+        body: "Discovery surfaced a long list of possible automations. We shipped invoice capture and social posting first because they were the two problems measured as costing the most owner-hours and the most lost revenue, rather than building every planned feature before anything went live.",
+      },
+    ],
+    results: [
+      {
+        value: "Live",
+        label: "At digivyapar.in",
+        note: "real users, not a demo",
+      },
+      { value: "4", label: "Core automations shipped" },
+      { value: "3", label: "Person team" },
+      { value: "1", label: "Channel to learn", note: "Telegram, nothing new" },
+    ],
+    limitations: [
+      "Built on n8n rather than custom backend code. The right call for speed and team-editability, but it means some of the heavier logic (OCR accuracy, voice-transcription quality) is bounded by what the underlying nodes support rather than something we can arbitrarily improve ourselves.",
+      "A team project. The product and its roadmap are shared between three of us; my specific ownership is the AI automation layer described above, not the full platform or its business strategy.",
+    ],
+    links: [{ label: "Visit digivyapar.in", href: "https://digivyapar.in" }],
+  },
+
+  {
+    slug: "jordan-valuation-engine",
+    index: "02",
     title: "Real-Estate Valuation Intelligence",
     kicker: "Explainability is the product",
     summary:
@@ -12,7 +94,7 @@ export const caseStudies: CaseStudy[] = [
     role: "Architect and sole engineer",
     status: "Delivered to client",
     featured: true,
-    span: "wide",
+    span: "narrow",
     stack: [
       "Python",
       "FastAPI",
@@ -25,17 +107,17 @@ export const caseStudies: CaseStudy[] = [
       "pytest",
     ],
     context:
-      "A builder-developer in Jordan had a finished tower and one decision to make: the launch price. In that market a launch price can be raised later but must never be cut — a public cut destroys buyer trust — so it has to be right the first time, and it has to be defensible to a board.",
+      "A builder-developer in Jordan had a finished tower and one decision to make: the launch price. In that market a launch price can be raised later but must never be cut: a public cut destroys buyer trust, so it has to be right the first time, and it has to be defensible to a board.",
     problem:
       "Jordan publishes no unit-level transaction prices. There is no ground truth to train against and no public comparable set. Every available signal is an asking price on a listing portal, scattered across six sites, heavily cross-posted, and inconsistent about the attributes that actually move value.",
     built: [
       "A six-portal scraping pipeline collecting 56,854 raw listings, refined to 52,647 after cross-portal deduplication.",
       "A 19-table analytical database that carries provenance on every row, so any number in the final report can be traced back to the listing it came from.",
       "A comparable-selection engine: same-submarket pooling with a log-space MAD outlier filter, near-duplicate collapsing for units cross-posted on multiple portals, and a size band that auto-widens until a minimum comparable count is met.",
-      "An attribute adjustment grid with no hardcoded premiums anywhere — categorical premiums are paired median differentials against the pool's modal baseline, continuous premiums are OLS slopes residualised by finish class.",
+      "An attribute adjustment grid with no hardcoded premiums anywhere: categorical premiums are paired median differentials against the pool's modal baseline, continuous premiums are OLS slopes residualised by finish class.",
       "A recommendation layer blending the comparable estimate with the submarket robust median by inverse-variance weighting, bounded below by a construction-cost floor and above by a rent-yield ceiling.",
       "An interactive dashboard over MapLibre GL, and a grounded LangGraph assistant that answers natural-language questions against the underlying market data.",
-      "A related 51,532-row lead and market-data enrichment pass feeding the same engagement — profiled column by column, rebuilt to a frozen 92-column schema, chunked and gated (12/12 integrity checks, 17/17 QA) before being folded into the client deliverable.",
+      "A related 51,532-row lead and market-data enrichment pass feeding the same engagement, profiled column by column, rebuilt to a frozen 92-column schema, chunked and gated (12/12 integrity checks, 17/17 QA) before being folded into the client deliverable.",
     ],
     architecture: {
       caption:
@@ -90,7 +172,7 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         title: "A plausibility gate over the statistics",
-        body: "Statistics will happily tell you that older buildings are worth more if the sample says so. Any premium that violates an economic prior — a non-monotonic finish schedule, a positive building-age slope — is dropped and replaced with a human-readable suppression note. The model is allowed to say nothing; it is not allowed to say something absurd.",
+        body: "Statistics will happily tell you that older buildings are worth more if the sample says so. Any premium that violates an economic prior (a non-monotonic finish schedule, a positive building-age slope) is dropped and replaced with a human-readable suppression note. The model is allowed to say nothing; it is not allowed to say something absurd.",
       },
       {
         title: "Degrade visibly, never silently",
@@ -119,19 +201,97 @@ export const caseStudies: CaseStudy[] = [
     ],
     limitations: [
       "The attribute grid is thin on production data. View, parking, elevator and finish are sparsely populated on real listings (finish 0.5–12%), so in practice only the size and age adjustments reliably fire. The framework is complete and correct on synthetic data; on live data it is doing less than it is capable of.",
-      "There is no back-test against a realised transaction, because no realised transactions are published. Only a synthetic-recovery harness exists — and that harness self-reports that categorical premiums over-recover by roughly 4.9×.",
+      "There is no back-test against a realised transaction, because no realised transactions are published. Only a synthetic-recovery harness exists, and that harness self-reports that categorical premiums over-recover by roughly 4.9×.",
       "It prices asking prices, calibrated by a flat discount. That is the largest unforced assumption in the system and I would attack it first with any real transaction data.",
       "One snapshot, not a pipeline. Every listing carries a capture date from the same two days; there is no scheduler behind it.",
     ],
   },
 
   {
+    slug: "dubai-operations-platform",
+    index: "03",
+    title: "Dubai Operations Platform",
+    kicker: "Nine personas, one order-to-billing lifecycle",
+    summary:
+      "An enterprise operations platform for an international client: order intake through to billing, with team and role-based access across nine distinct personas doing nine different jobs.",
+    year: "2026",
+    role: "Engineer, requirements through production",
+    status: "Delivered to client",
+    featured: true,
+    span: "wide",
+    stack: [
+      "Python",
+      "FastAPI",
+      "TypeScript",
+      "Next.js",
+      "React",
+      "Bun / Elysia",
+      "RBAC",
+    ],
+    context:
+      "An international operations client needed their order-to-billing process automated end to end. Nine distinct personas, from sales through to billing, each needed their own view and their own permissions over the same underlying orders.",
+    problem:
+      "The hard part was never the business logic. It was representing nine different people's jobs inside one coherent workflow and permission model without the interface becoming unusable for any single one of them. An early version proved this the hard way, in front of the client.",
+    built: [
+      "Modelled the full order lifecycle as six workflows spanning intake, production, quality checks, dispatch and billing, each with its own approval gates.",
+      "Built a team and role-based access model where a person's project access comes from team membership or a direct grant, and their permitted actions follow their role rather than being hardcoded per screen.",
+      "Designed a persona-aware in-app help system, so each of the nine roles sees guidance relevant to their own screens instead of one generic manual nobody reads.",
+      "After an early client demo surfaced that the interface was too complex for daily users, rebuilt the engagement around a formal requirement-documentation phase, mapping each persona's actual job before touching the UI again.",
+    ],
+    architecture: {
+      caption:
+        "Nine personas, six workflows, one access model underneath both.",
+      layers: [
+        { label: "Personas", nodes: ["9 roles", "Sales → Billing"] },
+        {
+          label: "Access",
+          nodes: ["Team membership", "Direct grants", "Role-scoped actions"],
+        },
+        {
+          label: "Workflows",
+          nodes: ["Intake", "Production", "QA", "Dispatch", "Billing"],
+        },
+        { label: "Gates", nodes: ["3 approval checkpoints"] },
+        { label: "Surface", nodes: ["Persona-aware in-app help"] },
+      ],
+    },
+    decisions: [
+      {
+        title: "Role, not screen, as the unit of permission",
+        body: "Hardcoding what each screen shows per persona does not scale past a handful of roles. Attaching permitted actions to a role, and roles to a team, meant a tenth persona would be a configuration change, not a new branch of conditional UI.",
+      },
+      {
+        title: "A failed demo is data, not a setback to hide",
+        body: "The first version we showed the client was too complex for the people who would actually use it every day. Instead of patching the interface, we went back and ran a proper requirement-documentation phase against each persona's real job. The platform that followed was shaped by that correction, which is a better story than pretending the first version was fine.",
+      },
+      {
+        title: "Team-based access over per-user flags",
+        body: "Granting access through team membership, with a direct-grant escape hatch for exceptions, meant onboarding a new person onto a project was adding them to a team, not auditing and re-granting nine separate permission flags by hand.",
+      },
+    ],
+    results: [
+      { value: "9", label: "Personas supported" },
+      { value: "6", label: "Workflows modelled", note: "intake to billing" },
+      { value: "3", label: "Approval gates" },
+      {
+        value: "1",
+        label: "Requirement-documentation rebuild",
+        note: "after the first demo",
+      },
+    ],
+    limitations: [
+      "The first interface shipped was genuinely too complex for the personas using it day to day. That failure is real and it reshaped how the rest of the engagement was run.",
+      "Client and platform specifics stay confidential under the engagement's terms, so this case study describes the pattern rather than the implementation. No screenshots, no client name beyond the project's working title.",
+    ],
+  },
+
+  {
     slug: "sse-event-centralisation",
-    index: "02",
+    index: "04",
     title: "Streaming Event Centralisation",
     kicker: "Merged into a live platform",
     summary:
-      "Server-sent event emission was scattered as inline yields across four agent classes. I centralised it into one module and proved — byte for byte — that the output stream did not change.",
+      "Server-sent event emission was scattered as inline yields across four agent classes. I centralised it into one module and proved, byte for byte, that the output stream did not change.",
     year: "2026",
     role: "Engineer",
     status: "Merged to production",
@@ -141,10 +301,10 @@ export const caseStudies: CaseStudy[] = [
     context:
       "An enterprise agentic AI platform streams its reasoning to the browser over server-sent events. The emission logic for those events had grown organically as inline `yield` statements buried inside the `run()` methods of several agent classes.",
     problem:
-      "Every new event type meant editing four files and hoping the shapes matched. The real constraint was that the frontend parsed this stream in production — so the refactor had to be invisible. Not 'equivalent'. Identical.",
+      "Every new event type meant editing four files and hoping the shapes matched. The real constraint was that the frontend parsed this stream in production, so the refactor had to be invisible. Not 'equivalent'. Identical.",
     built: [
       "A centralised `sse_events` module with one typed emitter helper per event type, replacing the scattered inline yields.",
-      "Migration of the inline emissions inside four agent `run()` methods — the base agent, the router, the multi-step base, and the platform Q&A agent.",
+      "Migration of the inline emissions inside four agent `run()` methods: the base agent, the router, the multi-step base, and the platform Q&A agent.",
       "A regression suite that captures the full event stream before and after and asserts byte-for-byte equality, so any drift fails the build rather than the user's browser.",
     ],
     architecture: {
@@ -180,7 +340,7 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         title: "Raising the adjacent bug instead of fixing it",
-        body: "While working in that code I found a pre-existing defect — a hard tool filter that another code path re-injects as virtual-filesystem builtins, so on weaker models an agent reads an empty skill file and improvises. It was genuinely broken and genuinely not mine. I wrote it up and flagged it as out of scope rather than quietly widening my diff. A reviewer should be able to read a pull request in one sitting.",
+        body: "While working in that code I found a pre-existing defect: a hard tool filter that another code path re-injects as virtual-filesystem builtins, so on weaker models an agent reads an empty skill file and improvises. It was genuinely broken and genuinely not mine. I wrote it up and flagged it as out of scope rather than quietly widening my diff. A reviewer should be able to read a pull request in one sitting.",
       },
     ],
     results: [
@@ -202,14 +362,14 @@ export const caseStudies: CaseStudy[] = [
       { value: "4", label: "Agent classes migrated" },
     ],
     limitations: [
-      "This is a refactor. It added no user-visible capability — its entire value is that the next event type is a one-line change instead of a four-file one.",
+      "This is a refactor. It added no user-visible capability. Its entire value is that the next event type is a one-line change instead of a four-file one.",
       "The regression suite proves the stream is unchanged for the paths it exercises. It is a strong guarantee over the covered event types, not a proof over every possible agent run.",
     ],
   },
 
   {
     slug: "llm-cost-optimisation",
-    index: "03",
+    index: "05",
     title: "LLM Cost and Token Engineering",
     kicker: "Where the money actually goes",
     summary:
@@ -226,7 +386,7 @@ export const caseStudies: CaseStudy[] = [
       "Cost at the invoice level tells you nothing actionable. The question is not 'what did we spend' but 'which prompt block, on which call path, is buying us the least'. That needs trace-level evidence.",
     built: [
       "Authenticated pulls of production traces from Langfuse across the full fleet of chats and agent runs.",
-      "A decomposition of one trivial request — a user typing 'Hi' — into the five named prompt blocks that made it bill 8,334 input tokens.",
+      "A decomposition of one trivial request (a user typing 'Hi') into the five named prompt blocks that made it bill 8,334 input tokens.",
       "A benchmark of four leading models against identical real workloads taken from those traces, rather than synthetic prompts.",
       "A costed action plan with ten items ranked P1–P3, packaged as a five-sheet workbook plus eight analysis documents, with names and week numbers stripped so it could be circulated.",
     ],
@@ -260,15 +420,15 @@ export const caseStudies: CaseStudy[] = [
     decisions: [
       {
         title: "Benchmark on real traces, not synthetic prompts",
-        body: "A synthetic benchmark measures a model. A benchmark replayed over your own production traces measures your bill. The two diverge badly once system prompts, retrieval context and tool schemas are in play — which is exactly where the cost was hiding.",
+        body: "A synthetic benchmark measures a model. A benchmark replayed over your own production traces measures your bill. The two diverge badly once system prompts, retrieval context and tool schemas are in play, which is exactly where the cost was hiding.",
       },
       {
         title: "Correcting my manager, with evidence",
-        body: "The working assumption from above was that one provider was 90% cheaper but had doubled our token count. That was half right, and the wrong half mattered. I showed that the reasoning variant and the chat variant of that model are different products — the reasoning one emits chain-of-thought tokens in a completely different order of magnitude — so the real net saving was 67%, not 90%. Being useful sometimes means telling the person who set the direction that the number is wrong, and bringing the trace that proves it.",
+        body: "The working assumption from above was that one provider was 90% cheaper but had doubled our token count. That was half right, and the wrong half mattered. I showed that the reasoning variant and the chat variant of that model are different products: the reasoning one emits chain-of-thought tokens in a completely different order of magnitude, so the real net saving was 67%, not 90%. Being useful sometimes means telling the person who set the direction that the number is wrong, and bringing the trace that proves it.",
       },
       {
         title: "Attribution beats negotiation",
-        body: "The largest finding was not a model price at all. Short acknowledgement calls — the ones that exist purely to say 'working on it' — were consuming 28–36% of a heavy trace's cost, at input:output ratios of 50:1 to 100:1. You cannot negotiate your way out of that. You can delete it.",
+        body: "The largest finding was not a model price at all. Short acknowledgement calls, the ones that exist purely to say 'working on it', were consuming 28–36% of a heavy trace's cost, at input:output ratios of 50:1 to 100:1. You cannot negotiate your way out of that. You can delete it.",
       },
     ],
     results: [
@@ -299,11 +459,11 @@ export const caseStudies: CaseStudy[] = [
 
   {
     slug: "workflow-builder-assistant",
-    index: "04",
+    index: "06",
     title: "Agentic Workflow Builder",
     kicker: "Plain English to a running graph",
     summary:
-      "A natural-language assistant that turns a business requirement into a complete multi-step, node-based automation on a visual canvas — laid out, labelled, and valid.",
+      "A natural-language assistant that turns a business requirement into a complete multi-step, node-based automation on a visual canvas, laid out, labelled, and valid.",
     year: "2026",
     role: "Feature lead across 3 repositories",
     status: "Shipped to a feature branch",
@@ -322,11 +482,11 @@ export const caseStudies: CaseStudy[] = [
       "Playwright",
     ],
     context:
-      "The platform had a visual workflow builder — a canvas where a user wires nodes together into an automation. Powerful, and a blank page. New users opened it and closed it.",
+      "The platform had a visual workflow builder: a canvas where a user wires nodes together into an automation. Powerful, and a blank page. New users opened it and closed it.",
     problem:
       "Generating a workflow from a prompt is not a text problem, it is a graph problem. The output has to be a valid directed graph over a real node registry, with correct ports, resolvable branch conditions, and a layout a human can actually read. An LLM will happily emit a plausible graph that the engine cannot execute.",
     built: [
-      "The assistant end to end across three repositories — the conversational service, the main service, and the frontend.",
+      "The assistant end to end across three repositories: the conversational service, the main service, and the frontend.",
       "Dagre-based automatic layout so generated graphs are readable rather than piled on the origin.",
       "Colour-coded node bands, branch labels on decision edges, and synthetic end-node convergence so every path visibly terminates.",
       "A plain-English error translator that turns engine validation failures into something a non-engineer can act on.",
@@ -372,7 +532,7 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         title: "Layout is part of correctness",
-        body: "A graph that is technically valid and visually unreadable has not solved the user's problem — they still cannot tell what it does. Dagre auto-layout, consistent colour bands and labelled decision edges were not polish, they were the difference between a demo and a tool.",
+        body: "A graph that is technically valid and visually unreadable has not solved the user's problem. They still cannot tell what it does. Dagre auto-layout, consistent colour bands and labelled decision edges were not polish, they were the difference between a demo and a tool.",
       },
       {
         title: "Translate the engine's errors",
@@ -395,18 +555,82 @@ export const caseStudies: CaseStudy[] = [
       { value: "4", label: "Repos unified", note: "branch reconciliation" },
     ],
     limitations: [
-      "This shipped to a feature branch and was never merged to the deployment branch. The team subsequently chose a different architectural approach for the same problem. I describe it as built, never as in production — the work and the code are real, the outcome was a change of direction above me.",
+      "This shipped to a feature branch and was never merged to the deployment branch. The team subsequently chose a different architectural approach for the same problem. I describe it as built, never as in production. The work and the code are real; the outcome was a change of direction above me.",
       "Generation quality tracked model quality closely. On weaker models the graphs were valid but naive, which is an honest limit of the constrained-generation approach rather than a bug.",
     ],
   },
 
   {
+    slug: "ingskills",
+    index: "07",
+    title: "InGSkills",
+    kicker: "Turning a platform into something that teaches",
+    summary:
+      "94 reusable engineering patterns distilled from production platform work into self-contained, teachable skill files, covering agent orchestration, cost accounting, RAG indexing, and more.",
+    year: "2026",
+    role: "Sole author",
+    status: "Written, not yet published",
+    featured: false,
+    span: "narrow",
+    stack: ["Technical writing", "Pattern distillation", "Markdown authoring"],
+    context:
+      "A large enterprise AI platform accumulates real engineering patterns that nobody writes down: the actual reasons a system is shaped the way it is, not just the code that implements it. I set out to read that platform properly and turn what I found into something reusable on the next project, not just something I personally remembered.",
+    problem:
+      "A skill that only says how something works is a tutorial. A skill that never explains why a design was forced into its shape by a real constraint becomes useless the moment the next project is slightly different. The challenge was writing patterns that teach the reasoning, not just the steps.",
+    built: [
+      "A strict authoring format for every skill: when to use it, what it gives you, the core concepts and the constraint that forced the design, a numbered end-to-end implementation with runnable code, the transferable rules, the pitfalls, and a provenance line back to the real source files studied.",
+      "94 skills organised into four priority tiers (High, Medium, Low, Extra) so the next engineer reaches for the essentials first: agent orchestration, LLM cost accounting, RAG indexing, API conventions, before the niche infrastructure patterns.",
+      "Deep-dive passes on security (HMAC gateway assertions, tamper-detected audit tables), database design (partitioned audit tables, conditional unique indexes), and operational patterns (circuit breakers, sliding-window rate limits) that a first pass through the platform does not surface.",
+      "Each skill self-contained in one file by design, with no shared references, so any single one can be dropped into a new project without pulling in the rest of the library.",
+    ],
+    architecture: {
+      caption:
+        "Read the platform, find the forcing constraint behind each pattern, write it down once, organise by priority.",
+      layers: [
+        { label: "Source", nodes: ["~30 production microservices"] },
+        { label: "Study", nodes: ["Read-only pattern extraction"] },
+        { label: "Distil", nodes: ["One pattern + its forcing constraint"] },
+        { label: "Organise", nodes: ["High", "Medium", "Low", "Extra"] },
+        { label: "Output", nodes: ["94 self-contained SKILL.md files"] },
+      ],
+    },
+    decisions: [
+      {
+        title: "Teach the constraint, not just the steps",
+        body: "Nearly every pattern worth writing down exists because something forced it: a race condition, a cost ceiling, a compliance rule. Naming that constraint explicitly is what lets someone apply the pattern correctly to a problem that looks slightly different from the original, instead of copying steps that quietly assumed a context that no longer holds.",
+      },
+      {
+        title: "One file, no shared references",
+        body: "Splitting a skill across multiple linked files is convenient to write and painful to reuse: the moment one file moves, every skill depending on it breaks. Keeping each skill fully self-contained costs some duplication, in exchange for a file that works correctly wherever it is dropped.",
+      },
+      {
+        title: "Priority tiers over alphabetical order",
+        body: "An alphabetical list treats agent orchestration and a self-hosted-font tweak as equally important. Grouping by priority tier means someone rebuilding a platform from scratch knows exactly what to read first and what can wait.",
+      },
+    ],
+    results: [
+      { value: "94", label: "Skills authored" },
+      {
+        value: "4",
+        label: "Priority tiers",
+        note: "High · Medium · Low · Extra",
+      },
+      { value: "~30", label: "Source microservices studied" },
+      { value: "200–450", label: "Lines per skill", note: "strict format" },
+    ],
+    limitations: [
+      "Written from reading the platform's code, not from independently building every pattern from scratch myself, so some entries are strong documentation of a working pattern rather than something I personally battle-tested in a fresh project.",
+      "Not yet published. This is a private authoring project, and the patterns have not yet been pressure-tested by another engineer applying them cold.",
+    ],
+  },
+
+  {
     slug: "nexadesk",
-    index: "05",
+    index: "08",
     title: "NexaDesk",
     kicker: "Multi-tenant AI support desk",
     summary:
-      "An AI-assisted support-ticket system built solo in the first two months on the job — classification, streamed AI suggestions, and real tenant isolation — then deployed and defended in a senior review.",
+      "An AI-assisted support-ticket system built solo in the first two months on the job: classification, streamed AI suggestions, and real tenant isolation, then deployed and defended in a senior review.",
     year: "2026",
     role: "Sole engineer",
     status: "Built, deployed, reviewed",
@@ -469,7 +693,7 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         title: "Leave the debugging in the commit history",
-        body: "The public commit log contains real fixes with real messages — a trailing slash breaking a stream URL, a cross-domain cookie rewrite of the auth flow. I did not squash that away. A clean history of perfect commits teaches a reviewer nothing about how you actually work.",
+        body: "The public commit log contains real fixes with real messages: a trailing slash breaking a stream URL, a cross-domain cookie rewrite of the auth flow. I did not squash that away. A clean history of perfect commits teaches a reviewer nothing about how you actually work.",
       },
     ],
     results: [
@@ -492,11 +716,11 @@ export const caseStudies: CaseStudy[] = [
 
   {
     slug: "stockpilot",
-    index: "06",
+    index: "09",
     title: "StockPilot",
     kicker: "Multi-tenant AI inventory system",
     summary:
-      "An AI-assisted inventory and procurement system — the second solo capstone from onboarding, with a four-role permission model and streamed procurement recommendations.",
+      "An AI-assisted inventory and procurement system: the second solo capstone from onboarding, with a four-role permission model and streamed procurement recommendations.",
     year: "2026",
     role: "Sole engineer",
     status: "Built, deployed, reviewed",
@@ -517,10 +741,10 @@ export const caseStudies: CaseStudy[] = [
     context:
       "The second of the two solo capstone applications from my onboarding, built and deployed alongside NexaDesk and defended in the same code-review and live-demo gate.",
     problem:
-      "Inventory decisions need more than a stock count — they need a recommendation on what to reorder and why, delivered to the right role, without one organisation's stock levels ever leaking into another's view.",
+      "Inventory decisions need more than a stock count. They need a recommendation on what to reorder and why, delivered to the right role, without one organisation's stock levels ever leaking into another's view.",
     built: [
       "AI procurement recommendations and streamed procurement reports from a FastAPI + LangChain + Groq service.",
-      "A four-role permission model — owner, admin, manager, member — each seeing a different slice of the same data.",
+      "A four-role permission model (owner, admin, manager, member), each seeing a different slice of the same data.",
       "The same invite → accept → role-assignment flow as NexaDesk, reused and adapted for the extra role tier.",
       "Organisation-scoped isolation at the data layer, deployed to Render and demonstrated live.",
     ],
@@ -559,7 +783,7 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         title: "Recommendations, not just numbers",
-        body: "A raw reorder-point calculation is a spreadsheet. Wrapping it in an LLM-generated explanation — why this item, why now — was the difference between a report nobody reads and one a manager acts on.",
+        body: "A raw reorder-point calculation is a spreadsheet. Wrapping it in an LLM-generated explanation of why this item and why now was the difference between a report nobody reads and one a manager acts on.",
       },
     ],
     results: [
@@ -573,7 +797,7 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     limitations: [
-      "Like NexaDesk, this is an assessment build — proof of competence, not a production inventory system carrying real stock data at scale.",
+      "Like NexaDesk, this is an assessment build: proof of competence, not a production inventory system carrying real stock data at scale.",
       "Procurement recommendations are LLM-generated explanations over a conventional reorder-point calculation, not a learned demand-forecasting model.",
     ],
     links: [
@@ -586,11 +810,11 @@ export const caseStudies: CaseStudy[] = [
 
   {
     slug: "buddyai-platform",
-    index: "07",
+    index: "10",
     title: "BuddyAI",
     kicker: "A conversational platform, built from a gateway up",
     summary:
-      "A multi-tenant conversational AI platform built as independent microservices behind one gateway — agent orchestration, auth, billing and chat each their own service, each their own concern.",
+      "A multi-tenant conversational AI platform built as independent microservices behind one gateway: agent orchestration, auth, billing and chat, each their own service, each their own concern.",
     year: "2026",
     role: "Sole engineer",
     status: "Built, self-directed",
@@ -606,11 +830,11 @@ export const caseStudies: CaseStudy[] = [
       "Docker",
     ],
     context:
-      "A personal project to build a conversational AI product the way a platform team would, rather than the way a weekend project usually is — services split by concern from day one, not refactored into that shape later.",
+      "A personal project to build a conversational AI product the way a platform team would, rather than the way a weekend project usually is. Services split by concern from day one, not refactored into that shape later.",
     problem:
       "A single monolithic chat backend tangles agent orchestration, authentication, billing and conversation history together until none of them can be changed independently. The goal was to keep those concerns separable from the first commit.",
     built: [
-      "An API gateway routing to four independent services — agent, auth, billing, chat — each with its own Dockerfile, config and routes.",
+      "An API gateway routing to four independent services (agent, auth, billing, chat), each with its own Dockerfile, config and routes.",
       "An agent service built around a LangGraph orchestration graph, so the reasoning flow is an explicit, inspectable graph rather than a chain of string-matched if-statements.",
       "A billing service with order creation and payment verification, and an auth service with its own user and session model.",
       "A React + Vite frontend with a Redux-managed conversation store: create/fetch conversations, send and receive messages, log out.",
@@ -635,7 +859,7 @@ export const caseStudies: CaseStudy[] = [
     decisions: [
       {
         title: "Split by concern before there was pressure to",
-        body: "It would have been faster to build one Express app with four route groups. Splitting into four services from the start forces each one to define its own contract early, which is the point — the cost is paid once, deliberately, instead of later, under pressure, during an incident.",
+        body: "It would have been faster to build one Express app with four route groups. Splitting into four services from the start forces each one to define its own contract early, which is the point. The cost is paid once, deliberately, instead of later, under pressure, during an incident.",
       },
       {
         title: "LangGraph over a prompt-chaining script",
@@ -652,18 +876,18 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     limitations: [
-      "Self-directed and not load-tested against real concurrent traffic — the architecture is built for independent scaling, but that has not been proven under load.",
+      "Self-directed and not load-tested against real concurrent traffic. The architecture is built for independent scaling, but that has not been proven under load.",
       "No automated test suite yet; correctness has been verified by hand through the running services, not by a CI gate.",
     ],
   },
 
   {
     slug: "resume-evidence-reconciliation",
-    index: "08",
+    index: "11",
     title: "Resume Evidence Reconciliation Agent",
     kicker: "Does the claim survive contact with evidence?",
     summary:
-      "A deterministic evidence-reconciliation engine that checks a resume's claims against a candidate's actual GitHub activity — built in a one-hour timed assessment, offline-first, zero API keys required to run.",
+      "A deterministic evidence-reconciliation engine that checks a resume's claims against a candidate's actual GitHub activity, built in a one-hour timed assessment, offline-first, zero API keys required to run.",
     year: "2026",
     role: "Sole engineer",
     status: "Delivered, timed assessment",
@@ -677,14 +901,14 @@ export const caseStudies: CaseStudy[] = [
       "Groq (optional)",
     ],
     context:
-      "An HR-agent assessment: given a candidate's resume and their GitHub activity, produce a credibility report a recruiter could actually use — in one hour, with no guarantee of a live API key at grading time.",
+      "An HR-agent assessment: given a candidate's resume and their GitHub activity, produce a credibility report a recruiter could actually use, in one hour, with no guarantee of a live API key at grading time.",
     problem:
-      "A recruiter spends about six seconds on a resume. The only question that matters is whether the claims on it survive contact with verifiable evidence. On the supplied case, the resume claimed 'Python (Expert)' plus a stack of Python frameworks — and the candidate's GitHub showed zero Python repositories and three strong, unmentioned frontend projects. The system has to surface exactly that gap, deterministically, not as a vibe.",
+      "A recruiter spends about six seconds on a resume. The only question that matters is whether the claims on it survive contact with verifiable evidence. On the supplied case, the resume claimed 'Python (Expert)' plus a stack of Python frameworks. The candidate's GitHub showed zero Python repositories and three strong, unmentioned frontend projects. The system has to surface exactly that gap, deterministically, not as a vibe.",
     built: [
-      "A typed domain model separating resume claims from GitHub evidence, with a pluggable GitHub provider — live REST API or a deterministic fixture — so the same code path runs online or fully offline.",
+      "A typed domain model separating resume claims from GitHub evidence, with a pluggable GitHub provider (live REST API or a deterministic fixture) so the same code path runs online or fully offline.",
       "A deterministic Evidence Reconciliation Engine: every canonical skill gets a `SkillVerdict` (claim, evidence strength, verdict, and a citation back to its source) computed by explicit scoring, not by asking an LLM to judge.",
       "A framework-to-language inference step, so React appearing in three repositories counts as real React evidence even though the word 'React' never appears on the resume.",
-      "Aggregate scoring: a recruiter-readiness score and a credibility-risk percentage — the share of headline claims a recruiter cannot verify.",
+      "Aggregate scoring: a recruiter-readiness score and a credibility-risk percentage: the share of headline claims a recruiter cannot verify.",
       "An LLM-optional resume rewriter that leads with what is provable, plus a Streamlit UI and a headless CLI for grading without a browser.",
     ],
     architecture: {
@@ -720,11 +944,11 @@ export const caseStudies: CaseStudy[] = [
       {
         title:
           "The reconciliation engine is deterministic code, not an LLM judgment call",
-        body: "Letting a model decide whether Python is 'really' on a GitHub profile is unauditable and occasionally wrong with total confidence. Evidence strength is computed from repo count, language byte-share, commit-volume share, recency decay and star count — numbers you can recompute by hand. The LLM only writes the prose explanation afterward.",
+        body: "Letting a model decide whether Python is 'really' on a GitHub profile is unauditable and occasionally wrong with total confidence. Evidence strength is computed from repo count, language byte-share, commit-volume share, recency decay and star count, numbers you can recompute by hand. The LLM only writes the prose explanation afterward.",
       },
       {
         title: "Must run with zero API keys",
-        body: "A grader has no guarantee of a key, and a `.env` file must never be part of a graded submission. A `NullLLM` provider means the system produces a complete, correct report with no network call at all — the LLM is a quality upgrade, never a dependency.",
+        body: "A grader has no guarantee of a key, and a `.env` file must never be part of a graded submission. A `NullLLM` provider means the system produces a complete, correct report with no network call at all. The LLM is a quality upgrade, never a dependency.",
       },
       {
         title: "Framework evidence closes a real gap in the spec",
@@ -746,18 +970,18 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     limitations: [
-      "Evidence strength is a heuristic scoring function over public signals (recency, volume, stars) — it is a strong proxy for depth, not a certified measurement of skill.",
+      "Evidence strength is a heuristic scoring function over public signals (recency, volume, stars). It is a strong proxy for depth, not a certified measurement of skill.",
       "GitHub is the only evidence source. A candidate's real expertise in private repos or non-GitHub work is invisible to this version.",
     ],
   },
 
   {
     slug: "loopr-finance-dashboard",
-    index: "09",
+    index: "12",
     title: "Loopr Finance",
     kicker: "A financial command centre, benchmark-built",
     summary:
-      "A full-stack financial analytics dashboard matched to a Figma design — live balances, a filterable transaction table, a configurable CSV report builder, and a notification inbox derived from the data itself.",
+      "A full-stack financial analytics dashboard matched to a Figma design: live balances, a filterable transaction table, a configurable CSV report builder, and a notification inbox derived from the data itself.",
     year: "2026",
     role: "Sole engineer",
     status: "Built, benchmark assignment",
@@ -779,13 +1003,13 @@ export const caseStudies: CaseStudy[] = [
     context:
       'A full-stack assignment built as a benchmark of a complete engineering process end to end: a Figma design ("Penta") to match pixel-for-pixel, 300 sample transactions to serve, and a working product at the end, not a prototype.',
     problem:
-      "A finance dashboard is only as useful as its filtering and its exports. The brief asked for server-side pagination, sortable and searchable tables, shareable filtered views, and a report builder — the parts that are easy to fake with a static mock and hard to actually get right.",
+      "A finance dashboard is only as useful as its filtering and its exports. The brief asked for server-side pagination, sortable and searchable tables, shareable filtered views, and a report builder: the parts that are easy to fake with a static mock and hard to actually get right.",
     built: [
-      "A layered Express API (`routes → controller → service → model`) with JWT access tokens plus a rotating httpOnly refresh cookie — reuse after rotation revokes the whole session family.",
+      "A layered Express API (`routes → controller → service → model`) with JWT access tokens plus a rotating httpOnly refresh cookie, where reuse after rotation revokes the whole session family.",
       "A transactions table with server-side pagination, column sorting with `aria-sort` indicators, debounced real-time search, and a full filter set (date range, amount range, category, status, user) that lives in the URL so any view is shareable.",
       "A CSV export builder: drag-and-drop column selection, three presets, a live preview, and a stream from the API that honours the current filters and sort rather than exporting everything.",
       "A wallet view (cash position, receivable vs payable, projected balance) and an analytics view with period-over-period KPI deltas and per-person comparisons.",
-      "A notification inbox derived from the data itself — large-transaction and monthly-summary alerts, not a separate notifications table someone has to remember to write to.",
+      "A notification inbox derived from the data itself: large-transaction and monthly-summary alerts, not a separate notifications table someone has to remember to write to.",
       "A Playwright end-to-end suite covering login, every page, filters, report generation and download, and mobile.",
     ],
     architecture: {
@@ -851,7 +1075,7 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     limitations: [
-      "Built against a seeded sample dataset of 300 transactions — it has not been exercised against the data volumes or edge cases of a real multi-year transaction history.",
+      "Built against a seeded sample dataset of 300 transactions. It has not been exercised against the data volumes or edge cases of a real multi-year transaction history.",
       "A benchmark assignment, not a commercial product: no billing, no multi-organisation tenancy, no production monitoring.",
     ],
   },
@@ -859,41 +1083,22 @@ export const caseStudies: CaseStudy[] = [
 
 export const sideProjects: SideProject[] = [
   {
-    name: "Dubai Operations Platform",
-    blurb:
-      "A multi-persona, order-to-billing operations platform delivered for an international client — team and role-based access across the full order lifecycle. Client and platform details stay confidential; the architecture pattern does not.",
-    stack: "Enterprise workflow automation · RBAC",
-  },
-  {
-    name: "Digivyapar",
-    blurb:
-      "An AI chat interface for Indian MSMEs to run invoicing, inventory, expenses and marketing from one conversation. Team project — my contribution was the AI automation layer.",
-    stack: "AI automation · Docker",
-    href: "https://digivyapar.in",
-  },
-  {
     name: "BookFlow",
     blurb:
-      "A ticket-management system for a book-focused e-commerce flow — browsing, ordering, and order tracking.",
+      "A ticket-management system for a book-focused e-commerce flow: browsing, ordering, and order tracking.",
     stack: "TypeScript",
     href: "https://github.com/Shabbir-Ezzuddin-Malegaonwala/BookFlow",
   },
   {
-    name: "InGSkills",
-    blurb:
-      "A personal library of 77 reusable engineering-pattern skills, distilled from production platform work — agent orchestration, cost accounting, RAG indexing, API conventions and more — written for public reuse.",
-    stack: "Skill authoring · knowledge distillation",
-  },
-  {
     name: "Pulse (Elite Infosoft)",
     blurb:
-      "A website-availability-monitoring MVP in .NET, benchmarked against Paessler PRTG — duration-based uptime, multi-check coverage, confirmed-before-declared outages. Currently in production for an internship evaluation.",
+      "A website-availability-monitoring MVP in .NET, benchmarked against Paessler PRTG: duration-based uptime, multi-check coverage, confirmed-before-declared outages. Currently in production for an internship evaluation.",
     stack: ".NET 10 · ASP.NET Core MVC · EF Core · PostgreSQL",
   },
   {
     name: "ParkSecure",
     blurb:
-      "An automatic-number-plate-recognition parking system — owner and vehicle registration, entry/exit logging from an uploaded plate image.",
+      "An automatic-number-plate-recognition parking system: owner and vehicle registration, entry/exit logging from an uploaded plate image.",
     stack: "Python · Flask · OpenCV · SQLite",
   },
   {
@@ -920,7 +1125,7 @@ export const sideProjects: SideProject[] = [
   {
     name: "ML Model Bank",
     blurb:
-      "Ten-plus deployed models — XGBoost salary prediction, ANN car pricing, and voting-classifier ensembles with SMOTE for loan, heart-disease and placement prediction.",
+      "Ten-plus deployed models: XGBoost salary prediction, ANN car pricing, and voting-classifier ensembles with SMOTE for loan, heart-disease and placement prediction.",
     stack: "scikit-learn · TensorFlow · XGBoost · Flask",
     href: "https://github.com/Shabbir-Ezzuddin-Malegaonwala?tab=repositories",
   },
@@ -934,7 +1139,7 @@ export const sideProjects: SideProject[] = [
   {
     name: "Food Delivery DBMS",
     blurb:
-      "A complete relational schema for food-delivery operations — orders, riders, restaurants, settlement.",
+      "A complete relational schema for food-delivery operations: orders, riders, restaurants, settlement.",
     stack: "SQL · Database design",
     href: "https://github.com/Shabbir-Ezzuddin-Malegaonwala/Food-Delivery-DBMS",
   },

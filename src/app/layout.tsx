@@ -33,8 +33,8 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(profile.siteUrl),
   title: {
-    default: `${profile.fullName} — ${profile.role}`,
-    template: `%s — ${profile.fullName}`,
+    default: `${profile.fullName} · ${profile.role}`,
+    template: `%s · ${profile.fullName}`,
   },
   description:
     "AI Engineer building agentic systems, LLM cost and observability tooling, and data platforms that reach production. Case studies with real numbers.",
@@ -55,13 +55,13 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: profile.siteUrl,
     siteName: profile.fullName,
-    title: `${profile.fullName} — ${profile.role}`,
+    title: `${profile.fullName} · ${profile.role}`,
     description:
       "Agentic systems, LLM cost engineering, and data platforms that reach production.",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${profile.fullName} — ${profile.role}`,
+    title: `${profile.fullName} · ${profile.role}`,
     description:
       "Agentic systems, LLM cost engineering, and data platforms that reach production.",
   },
@@ -83,7 +83,7 @@ const PERSON_SCHEMA = {
     addressLocality: "Pune",
     addressCountry: "IN",
   },
-  sameAs: [profile.github, profile.linkedin],
+  sameAs: [profile.github, profile.linkedin, profile.instagram],
   alumniOf: [
     { "@type": "CollegeOrUniversity", name: "MIT World Peace University" },
     { "@type": "CollegeOrUniversity", name: "Tilak Maharashtra Vidyapeeth" },

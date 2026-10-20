@@ -27,7 +27,7 @@ const PRINCIPLES = [
   },
   {
     title: "Say what it cannot do",
-    body: "Every case study on this site ends with its own limitations. Volunteering them is not modesty — it is the fastest way to a real technical conversation.",
+    body: "Every case study on this site ends with its own limitations. Volunteering them is not modesty, it is the fastest way to a real technical conversation.",
   },
 ];
 
@@ -47,7 +47,7 @@ export default function AboutPage() {
         </h1>
       </header>
 
-      <div className="mt-16 grid gap-12 md:grid-cols-[1.25fr_0.75fr] md:gap-16">
+      <div className="mt-16 grid gap-12 md:grid-cols-[1.25fr_0.75fr] md:items-center md:gap-16">
         <Reveal className="space-y-6">
           {profile.bio.map((para) => (
             <p
@@ -64,10 +64,10 @@ export default function AboutPage() {
             <Image
               src="/portrait-about.webp"
               alt={`${profile.firstName} outdoors`}
-              width={900}
+              width={514}
               height={643}
-              sizes="(max-width: 768px) 100vw, 340px"
-              className="h-auto w-full object-cover"
+              sizes="(max-width: 768px) 60vw, 300px"
+              className="mx-auto h-auto w-full max-w-[280px] object-cover md:max-w-none"
             />
           </div>
           <p className="hud">Pune, India</p>
@@ -121,7 +121,7 @@ export default function AboutPage() {
               I have hosted and anchored annual college programmes, competed in
               the Smart India Hackathon, and spent a lot of time explaining
               technical systems to people who do not read code. That is not a
-              side note — a large part of this job is making something
+              side note. A large part of this job is making something
               complicated legible to the person who has to approve it.
             </p>
             <ul className="mt-7 space-y-3">
@@ -129,7 +129,7 @@ export default function AboutPage() {
                 <li key={a.title} className="flex gap-3 text-sm text-muted">
                   <span className="mt-2 size-1 shrink-0 bg-gold" aria-hidden />
                   <span>
-                    <span className="text-ink/85">{a.title}</span> — {a.detail}
+                    <span className="text-ink/85">{a.title}.</span> {a.detail}
                   </span>
                 </li>
               ))}

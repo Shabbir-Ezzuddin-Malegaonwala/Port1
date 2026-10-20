@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { ArrowUpRight, Mail } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/ui/BrandIcons";
+import {
+  GithubIcon,
+  InstagramIcon,
+  LinkedinIcon,
+} from "@/components/ui/BrandIcons";
 import { Reveal } from "@/components/ui/Reveal";
 import { profile } from "@/content/profile";
 
@@ -29,7 +33,7 @@ export function ContactCTA() {
           </h2>
 
           <p className="mx-auto mt-5 max-w-lg text-balance text-muted">
-            {profile.availabilityLine}. The fastest way to reach me is email — I
+            {profile.availabilityLine}. The fastest way to reach me is email. I
             reply to everything that is not a template.
           </p>
 
@@ -68,6 +72,15 @@ export function ContactCTA() {
               className="grid size-10 place-items-center text-muted transition-colors hover:bg-ink/8 hover:text-ink"
             >
               <LinkedinIcon className="size-4.5" />
+            </a>
+            <a
+              href={profile.instagram}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+              className="grid size-10 place-items-center text-muted transition-colors hover:bg-ink/8 hover:text-ink"
+            >
+              <InstagramIcon className="size-4.5" />
             </a>
           </div>
         </div>

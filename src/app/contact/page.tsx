@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { ArrowUpRight, FileText, Mail } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/ui/BrandIcons";
+import {
+  GithubIcon,
+  InstagramIcon,
+  LinkedinIcon,
+} from "@/components/ui/BrandIcons";
 import { CopyEmail } from "@/components/ui/CopyEmail";
 import { Reveal } from "@/components/ui/Reveal";
 import { StatusChip } from "@/components/ui/StatusChip";
@@ -8,7 +12,7 @@ import { profile } from "@/content/profile";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: `Get in touch with ${profile.fullName} — AI Engineer, ${profile.location}.`,
+  description: `Get in touch with ${profile.fullName}, AI Engineer, ${profile.location}.`,
 };
 
 const CHANNELS = [
@@ -27,6 +31,13 @@ const CHANNELS = [
     note: "Background, recommendations, updates",
   },
   {
+    label: "Instagram",
+    value: "@mwshabbir",
+    href: profile.instagram,
+    Icon: InstagramIcon,
+    note: "Behind the scenes, less filtered",
+  },
+  {
     label: "Request résumé",
     value: "Sent on request",
     href: profile.resumeHref,
@@ -36,7 +47,7 @@ const CHANNELS = [
 ];
 
 const FIT = [
-  "AI / LLM engineering roles — agentic systems, RAG, evaluation and observability",
+  "AI / LLM engineering roles: agentic systems, RAG, evaluation and observability",
   "Data science and analytics roles with a production engineering edge",
   "Consulting on LLM cost, latency and reliability for teams already running something",
   "Anything where the hard part is making a model behave the same way twice",
@@ -98,7 +109,7 @@ export default function ContactPage() {
           <span className="rule-fade flex-1" aria-hidden />
         </div>
 
-        <ul className="mt-8 grid gap-px overflow-hidden border border-hairline bg-hairline sm:grid-cols-3">
+        <ul className="mt-8 grid gap-px overflow-hidden border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-4">
           {CHANNELS.map(({ label, value, href, Icon, note }, i) => (
             <Reveal
               key={label}

@@ -22,7 +22,7 @@ export async function generateMetadata({
     title: study.title,
     description: study.summary,
     openGraph: {
-      title: `${study.title} — ${profile.fullName}`,
+      title: `${study.title} · ${profile.fullName}`,
       description: study.summary,
       type: "article",
     },

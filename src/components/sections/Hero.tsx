@@ -1,7 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/ui/BrandIcons";
+import {
+  GithubIcon,
+  InstagramIcon,
+  LinkedinIcon,
+} from "@/components/ui/BrandIcons";
 import { StatusChip } from "@/components/ui/StatusChip";
 import { profile } from "@/content/profile";
 
@@ -31,7 +35,7 @@ export function Hero() {
 
           <p className="mt-8 max-w-xl text-pretty leading-relaxed text-muted">
             I build AI agents and multi-agent bots, workflow automation, and
-            full-stack AI applications — so your systems run themselves. One
+            full-stack AI applications, so your systems run themselves. One
             touch or one voice, and the result appears.
           </p>
 
@@ -63,6 +67,15 @@ export function Hero() {
                 className="grid size-10 place-items-center text-muted transition-colors hover:text-gold"
               >
                 <LinkedinIcon className="size-4.5" />
+              </a>
+              <a
+                href={profile.instagram}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+                className="grid size-10 place-items-center text-muted transition-colors hover:text-gold"
+              >
+                <InstagramIcon className="size-4.5" />
               </a>
             </div>
           </div>
