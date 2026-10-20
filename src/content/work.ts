@@ -205,6 +205,12 @@ export const caseStudies: CaseStudy[] = [
       "It prices asking prices, calibrated by a flat discount. That is the largest unforced assumption in the system and I would attack it first with any real transaction data.",
       "One snapshot, not a pipeline. Every listing carries a capture date from the same two days; there is no scheduler behind it.",
     ],
+    links: [
+      {
+        label: "Real-Estate-Jordan on GitHub",
+        href: "https://github.com/Shabbir-Ezzuddin-Malegaonwala/Real-Estate-Jordan",
+      },
+    ],
   },
 
   {
