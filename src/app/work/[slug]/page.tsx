@@ -144,7 +144,7 @@ export default async function CaseStudyPage({
       </Section>
 
       <Section index="06" label="The impact">
-        <div className="grid gap-px overflow-hidden border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-px overflow-hidden border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-3">
           {study.results.map((r) => (
             <div key={r.label} className="bg-elevated/60 p-6">
               <p className="tabular text-2xl leading-none text-gold">
