@@ -20,8 +20,7 @@ export function ProofStrip() {
         </Reveal>
         <Reveal delay={0.05}>
           <p className="mt-4 max-w-xl text-pretty text-sm text-muted">
-            A few things that are true because they are measured, not because
-            they sound good.
+            A track record measured in production.
           </p>
         </Reveal>
       </div>

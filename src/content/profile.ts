@@ -16,14 +16,14 @@ export const profile = {
 
   headline: "I build AI systems that reach production.",
   subhead:
-    "Agentic workflows, LLM cost and observability engineering, and data platforms, taken from a prompt on a whiteboard to code that is reviewed, tested, and running.",
+    "Agentic workflows, LLM cost and observability engineering, and data platforms, taken from a whiteboard to tested, production-grade systems.",
 
   /** Used for meta description and the about intro. Humanised, first person, no em-dashes. */
   bio: [
-    "My interest in technology started with a simple question: how can it actually solve a real problem, not just look impressive in a demo? That question took me through a Bachelor's in Computer Applications and then a Master's at MIT World Peace University, and somewhere along the way it turned into a focus on AI and automation specifically.",
-    "I spent my first proper year in the field doing the full data lifecycle by hand: scraping, cleaning, feature engineering, building models, and then explaining all of it to people who don't read code. That year taught me something a lot of AI tutorials skip. A model that works in a notebook and a system that works in production are two very different things.",
-    "Right now I am an AI Engineer at Rubikon Labs in Pune, building on an enterprise agentic AI platform. The part of the job I care about most is the unglamorous half: making a model answer correctly, cheaply, and the same way tomorrow as it did today. Anyone can get an agent to respond once. Keeping it reliable at scale is the actual work.",
-    "Outside the day job, I run SEM Corp, which is really just a name for the same mission stated plainly. Make people's lives simpler through AI agents, automation, and software that removes repetitive work. One touch or one voice, and the result should just appear.",
+    "I build technology around one question: how does it solve a real problem, not just look impressive in a demo? That question carried me through a Bachelor's in Computer Applications and a Master's at MIT World Peace University, and into AI and automation as a discipline.",
+    "I began by owning the full data lifecycle: scraping, cleaning, feature engineering, modelling, and translating the results for people who do not read code. That experience set my standard. A model that works in a notebook is a starting point; a system that works in production is the deliverable.",
+    "Today I am an AI Engineer at Rubikon Labs, building on an enterprise agentic AI platform. My focus is making models answer correctly, cheaply, and consistently at scale. Getting an agent to respond once is a demo; keeping it reliable, fast and cost-efficient under production load is the engineering I own.",
+    "Outside the day job, I run SEM Corp, the same mission in product form: AI agents, automation and software that remove repetitive work from people's lives. One touch or one voice, and the result should simply appear.",
   ],
 
   email: "shabbirmalegaon786@gmail.com",
@@ -33,7 +33,7 @@ export const profile = {
   resumeHref:
     "mailto:shabbirmalegaon786@gmail.com?subject=R%C3%A9sum%C3%A9%20request&body=Hi%20Shabbir%2C%0A%0ACould%20you%20send%20me%20your%20r%C3%A9sum%C3%A9%3F%0A%0A",
   resumeLabel: "Request résumé",
-  siteUrl: "https://mwshabbirport1.vercel.app",
+  siteUrl: "https://semcorp.vercel.app",
 } as const;
 
 /** Section 02: numbers before claims. */
@@ -47,12 +47,12 @@ export const proofMetrics: Metric[] = [
   {
     value: "67%",
     label: "Real LLM cost cut, verified against live traces",
-    note: "corrected a 90% claim with evidence",
+    note: "trace-level evidence, not an estimate",
   },
   {
     value: "Zero",
-    label: "Output drift in a refactor merged to production",
-    note: "zero regressions, shipped clean",
+    label: "Output drift in a production refactor",
+    note: "13 byte-identical regression tests",
   },
   {
     value: "6 → 1",
@@ -61,8 +61,8 @@ export const proofMetrics: Metric[] = [
   },
   {
     value: "4",
-    label: "Industries shipped production systems in",
-    note: "real estate, operations, SME automation, finance",
+    label: "Domains delivered in",
+    note: "real estate, operations, SME automation, AI platforms",
   },
 ];
 
@@ -92,12 +92,12 @@ export const capabilities: Capability[] = [
   {
     index: "03",
     title: "Full-stack delivery",
-    body: "Shipping it is part of building it. Multi-tenant apps, reviewed code, real deploys.",
+    body: "Shipping is part of building it: multi-tenant applications, production-grade code, real deploys.",
     points: [
       "FastAPI, Flask, Elysia / Bun, REST API design",
       "Next.js, React, TypeScript, Tailwind",
       "PostgreSQL, MySQL, MongoDB, SQLite: schema design and migrations",
-      "Docker, CI/CD, pytest and Playwright suites, code review",
+      "Docker, CI/CD, pytest and Playwright suites, release engineering",
     ],
   },
 ];

@@ -15,19 +15,19 @@ export const metadata: Metadata = {
 const PRINCIPLES = [
   {
     title: "Measure before you build",
-    body: "The most useful thing I have done on several projects is prove that the planned approach would not work, early, and say so. A measurement that kills a sprint is cheaper than a sprint.",
+    body: "The strongest architecture starts with evidence. I measure the real workload before committing to a design, so the system is built around facts rather than assumptions.",
   },
   {
     title: "Make the next change easy",
-    body: "Code is read far more than it is written, and changed more than it is read. A smaller diff that a reviewer can hold in their head beats a clever one that nobody wants to touch.",
+    body: "Code is read far more than it is written. I optimise for the next engineer: clean boundaries, small diffs, and systems that are easy to extend without a rewrite.",
   },
   {
     title: "Show the working",
-    body: "A system that produces a number nobody can interrogate is a liability. Explainability is not a feature you add at the end; it is a constraint you design against from the start.",
+    body: "A number nobody can interrogate is a number nobody should trust. Explainability is not a feature added at the end; it is a design constraint from the first commit.",
   },
   {
     title: "Finish what I start",
-    body: "A project that is 90% done is a project nobody can rely on. I would rather ship a smaller scope completely than a larger one half-finished, because the only part of a system that matters is the part that actually works.",
+    body: "Shipping is the standard. I scope for a complete, working release over a larger one left half-finished, because value only exists in the part that runs.",
   },
 ];
 
@@ -42,8 +42,8 @@ export default function AboutPage() {
         </div>
 
         <h1 className="mt-7 max-w-3xl text-balance text-[clamp(2.4rem,5.6vw,4rem)] font-semibold leading-[1.06] tracking-[-0.035em]">
-          I care about the
-          <span className="accent"> unglamorous half</span> of AI engineering.
+          I build AI systems that
+          <span className="accent"> hold up in production.</span>
         </h1>
       </header>
 
@@ -118,11 +118,10 @@ export default function AboutPage() {
 
           <div>
             <p className="text-pretty text-lg leading-relaxed text-ink/85 text-justify hyphens-auto">
-              I have hosted and anchored annual college programmes, competed in
-              the Smart India Hackathon, and spent a lot of time explaining
-              technical systems to people who do not read code. That is not a
-              side note. A large part of this job is making something
-              complicated legible to the person who has to approve it.
+              I have hosted annual college programmes, competed in the Smart
+              India Hackathon, and spent years translating technical systems for
+              people who do not read code. Making complex work legible to
+              decision-makers is part of the job, and I treat it that way.
             </p>
             <ul className="mt-7 space-y-3">
               {achievements.map((a) => (

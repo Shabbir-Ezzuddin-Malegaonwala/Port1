@@ -25,8 +25,8 @@ export default function WorkPage() {
           <span className="accent"> actually got built.</span>
         </h1>
         <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted text-justify hyphens-auto">
-          Each case study covers the architecture, the engineering decisions
-          behind it, and the measured results.
+          Each case study covers the architecture, the decisions behind it, and
+          the measured outcomes.
         </p>
       </header>
 
@@ -45,7 +45,7 @@ export default function WorkPage() {
         </div>
 
         <h2 className="mt-6 text-[clamp(1.75rem,3.6vw,2.5rem)] font-semibold tracking-[-0.03em]">
-          Smaller builds and
+          More builds and
           <span className="accent"> experiments</span>
         </h2>
 

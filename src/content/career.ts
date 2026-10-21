@@ -13,7 +13,7 @@ export const experience: ExperienceEntry[] = [
       "Built an agentic assistant that converts natural-language requirements into complete multi-step, node-based automation workflows across a React and Python/FastAPI platform, alongside custom nodes in a 20+ node registry.",
       "Delivered the Dubai operations platform for an international client (a multi-persona, order-to-billing workflow with team and role-based access) and six end-to-end sales-automation workflows, owning delivery from requirements through to production.",
       "Led a production LLM cost and observability initiative: instrumented and analysed 340+ live traces and 200+ agent runs, benchmarked four models on identical workloads, and delivered a costed optimisation roadmap.",
-      "Closed a spec-compliance gap in the platform's Skill Builder against Anthropic's published skill specification: 18 improvements across 5 files, including a spec validator and a rewritten authoring-rules module, raised as three draft pull requests.",
+      "Drove a spec-compliance upgrade for the platform's Skill Builder against Anthropic's published skill specification: 18 improvements across 5 files, including a spec validator and a rewritten authoring-rules module, delivered as three pull requests.",
       "Resolved critical agent-execution and file-handling issues on Workbench, the platform's self-improving AI engineering teammate, shipping the fixes through to production.",
       "Built out a reusable Playwright action-library for the platform's end-to-end test suite: composable page-object blocks, new coverage for the Workflow and Agent Builder modules, and seed-independent assertions on top of an existing 100+ test suite.",
       "Ran a full data-analytics engagement over a 51,000+ record dataset: profiling, schema re-architecture, an integrity-gated enrichment pipeline, and a costed buy-versus-build vendor evaluation.",
@@ -117,7 +117,7 @@ export const stackGroups: StackGroup[] = [
     label: "Engineering practice",
     items: [
       "Git and GitHub",
-      "Code review",
+      "Quality gates",
       "Docker",
       "CI/CD",
       "pytest",
@@ -153,7 +153,7 @@ export const achievements = [
   },
   {
     title: "TCS National Qualifier Test",
-    detail: "Cleared the TCS NQT.",
+    detail: "Qualified in the TCS National Qualifier Test.",
   },
   {
     title: "Stage host and anchor",

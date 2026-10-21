@@ -128,7 +128,7 @@ export default async function CaseStudyPage({
         />
       </Section>
 
-      <Section index="05" label="Engineering decisions">
+      <Section index="05" label="Decisions that defined the build">
         <div className="space-y-5">
           {study.decisions.map((d) => (
             <div key={d.title} className="panel bg-elevated/50 p-6 md:p-7">
@@ -143,7 +143,7 @@ export default async function CaseStudyPage({
         </div>
       </Section>
 
-      <Section index="06" label="Results">
+      <Section index="06" label="Outcomes">
         <div className="grid gap-px overflow-hidden border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-3">
           {study.results.map((r) => (
             <div key={r.label} className="bg-elevated/60 p-6">

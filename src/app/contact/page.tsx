@@ -21,7 +21,7 @@ const CHANNELS = [
     value: "Shabbir-Ezzuddin-Malegaonwala",
     href: profile.github,
     Icon: GithubIcon,
-    note: "Code, commit history, the smaller builds",
+    note: "Code, case studies and the systems behind them",
   },
   {
     label: "LinkedIn",

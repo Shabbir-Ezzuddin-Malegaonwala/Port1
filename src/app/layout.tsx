@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     template: `%s · ${profile.fullName}`,
   },
   description:
-    "AI Engineer building agentic systems, LLM cost and observability tooling, and data platforms that reach production. Case studies with real numbers.",
+    "AI Engineer building agentic systems, LLM cost and observability tooling, and data platforms that reach production. Case studies with measured outcomes.",
   keywords: [
     "AI Engineer",
     "LLM Engineer",

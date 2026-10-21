@@ -3,8 +3,7 @@
 Personal portfolio of **Shabbir Malegaonwala**, AI Engineer — AI agents and multi-agent bots,
 workflow automation, and full-stack AI applications.
 
-Six case studies with real architecture, measured results, and an honest limitations section
-on each one.
+Twelve case studies with real architecture and measured outcomes.
 
 The CV is deliberately **not** committed — it carries personal details, so the site asks
 visitors to request it by email instead.
@@ -67,7 +66,7 @@ All facts are typed TypeScript — no JSX, no CMS:
 | File | Holds |
 |---|---|
 | `src/content/profile.ts` | name, bio, links, proof metrics, capability pillars |
-| `src/content/work.ts` | the six case studies and the smaller builds |
+| `src/content/work.ts` | the twelve case studies and the wider builds |
 | `src/content/career.ts` | experience, education, stack, certifications, languages |
 
 Adding a case study is one entry in `work.ts`. The route, the index page card, the sitemap and

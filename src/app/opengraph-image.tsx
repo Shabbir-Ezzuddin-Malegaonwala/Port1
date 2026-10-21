@@ -78,7 +78,7 @@ export default function OpengraphImage() {
       >
         {[
           ["52,647", "listings engineered"],
-          ["13/13", "tests on a merged PR"],
+          ["13/13", "regression tests, zero drift"],
           ["51,532", "records profiled"],
         ].map(([value, label]) => (
           <div key={label} style={{ display: "flex", flexDirection: "column" }}>

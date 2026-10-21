@@ -10,7 +10,7 @@ export function Experience() {
         index="04"
         label="Experience"
         title="Where the work"
-        accent="actually happened"
+        accent="reached production"
       />
 
       {experience.map((job) => (

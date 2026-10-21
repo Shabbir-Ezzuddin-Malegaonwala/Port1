@@ -21,7 +21,7 @@ export function SelectedWork() {
         label="Selected work"
         title="Systems I have"
         accent="taken to production"
-        lede="Each of these has a full case study behind it: the architecture, the engineering decisions, and the measured results."
+        lede="Each of these has a full case study behind it: the architecture, the decisions, and the measured outcomes."
       />
 
       <div className="grid gap-5 md:grid-cols-12">
@@ -41,7 +41,7 @@ export function SelectedWork() {
           href="/work"
           className="group mt-10 inline-flex items-center gap-2 text-sm font-medium text-gold"
         >
-          All work, including the smaller builds
+          Explore the full body of work
           <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </Link>
       </Reveal>

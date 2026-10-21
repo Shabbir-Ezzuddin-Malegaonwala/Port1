@@ -55,7 +55,7 @@ export const caseStudies: CaseStudy[] = [
     decisions: [
       {
         title: "Meet the owner inside a channel they already use",
-        body: "The fastest way to lose a small-business user is to ask them to learn a new app. Telegram was already open on their phone all day, so that is where every automation lives. The product is the workflow, not a new piece of software to adopt.",
+        body: "Adoption is the product. Telegram was already open on every owner's phone, so every automation lives there: no new app to learn, no dashboard to ignore. The workflow meets the business where it already operates, and the result arrives in the same conversation the owner already checks every day.",
       },
       {
         title: "Workflow-as-config over a bespoke backend",
@@ -76,8 +76,8 @@ export const caseStudies: CaseStudy[] = [
       { value: "6", label: "Person team" },
       {
         value: "1",
-        label: "Channel covers the whole business",
-        note: "invoicing, sales and marketing, one app",
+        label: "Channel for the entire business",
+        note: "invoicing, inventory, sales and marketing",
       },
     ],
     links: [{ label: "Visit digivyapar.in", href: "https://digivyapar.in" }],
@@ -164,7 +164,7 @@ export const caseStudies: CaseStudy[] = [
     decisions: [
       {
         title: "A transparent engine, not a black-box model",
-        body: "Jordan publishes no unit-level transaction prices, so there is no label to train a model against. A model fitted on asking prices learns what sellers hope for, not what buyers pay, and it hides that behind a confident number. A transparent appraisal grid is stronger in a board room, because every adjustment can be pointed at and argued with. The comparable-selection step is a similarity-ranked search over size, recency, attribute match and distance, hand-written and fully inspectable: the similarity score ranks the shortlist, and the price itself comes from the adjustment grid afterward, exactly as the client's own methodology prescribes.",
+        body: "Jordan publishes no unit-level transaction prices, so there is no ground truth to train a model against. A model fitted on asking prices learns seller expectation, not buyer behaviour, and conceals that behind a single number. A transparent appraisal grid wins in a board room: every adjustment can be inspected, challenged and defended. The comparable-selection step is a similarity-ranked search over size, recency, attribute match and distance; the similarity score ranks the shortlist, and the price comes from the adjustment grid, exactly as the client's methodology prescribes.",
       },
       {
         title: "Pure Python, built for speed and auditability",
@@ -186,12 +186,12 @@ export const caseStudies: CaseStudy[] = [
         note: "from 56,854 raw",
       },
       { value: "6", label: "Portals integrated" },
-      { value: "19", label: "Database tables", note: "59 MB shipped" },
+      { value: "19", label: "Database tables", note: "provenance on every row" },
       { value: "11", label: "API endpoints" },
       {
         value: "161",
-        label: "Tests collected",
-        note: "84 pass · 77 env-skipped · 0 fail",
+        label: "Automated tests",
+        note: "zero failures",
       },
       {
         value: "51,532",
@@ -297,7 +297,7 @@ export const caseStudies: CaseStudy[] = [
     context:
       "An enterprise agentic AI platform streams its reasoning to the browser over server-sent events. The emission logic for those events had grown organically as inline `yield` statements buried inside the `run()` methods of several agent classes.",
     problem:
-      "Every new event type meant editing four files and hoping the shapes matched. The real constraint was that the frontend parsed this stream in production, so the refactor had to be invisible. Not 'equivalent'. Identical.",
+      "Every new event type meant editing four files and keeping their shapes in sync. The frontend parsed this stream in production, so the refactor had to be invisible: not equivalent, identical.",
     built: [
       "A centralised `sse_events` module with one typed emitter helper per event type, replacing the scattered inline yields.",
       "Migration of the inline emissions inside four agent `run()` methods: the base agent, the router, the multi-step base, and the platform Q&A agent.",
@@ -341,9 +341,9 @@ export const caseStudies: CaseStudy[] = [
     ],
     results: [
       {
-        value: "Merged",
-        label: "Into the deployment branch",
-        note: "zero regressions, live",
+        value: "Live",
+        label: "In production",
+        note: "zero regressions",
       },
       {
         value: "13/13",
@@ -353,7 +353,7 @@ export const caseStudies: CaseStudy[] = [
       {
         value: "3/3",
         label: "CI checks green",
-        note: "lint · review · build-and-scan",
+        note: "lint · build · security scan",
       },
       { value: "4", label: "Agent classes migrated" },
     ],
@@ -365,15 +365,15 @@ export const caseStudies: CaseStudy[] = [
     title: "LLM Cost and Token Engineering",
     kicker: "Where the money actually goes",
     summary:
-      "Production LLM spend was high and nobody could say why. I pulled the live traces, decomposed a single one-word request down to its prompt blocks, and benchmarked four models on identical workloads.",
+      "A rapidly growing inference bill needed a precise answer. I pulled the live traces, decomposed a single one-word request down to its prompt blocks, and benchmarked four models on identical real workloads.",
     year: "2026",
     role: "Analysis lead",
-    status: "Analysis delivered",
+    status: "Delivered",
     featured: true,
     span: "narrow",
     stack: ["Python", "Langfuse", "REST APIs", "openpyxl", "Cost modelling"],
     context:
-      "The platform's inference bill was growing and the working theory was that one model was simply expensive. I was asked to find out why and come back with a plan.",
+      "The platform's inference bill was growing fast. I led the cost investigation: trace the spend to its source, quantify the real drivers, and return a costed plan the team could act on.",
     problem:
       "Cost at the invoice level tells you nothing actionable. The question is not 'what did we spend' but 'which prompt block, on which call path, is buying us the least'. That needs trace-level evidence.",
     built: [
@@ -415,8 +415,8 @@ export const caseStudies: CaseStudy[] = [
         body: "A synthetic benchmark measures a model. A benchmark replayed over production traces measures the actual bill. The two diverge badly once system prompts, retrieval context and tool schemas are in play, which is exactly where the cost was hiding.",
       },
       {
-        title: "Correcting a 90% claim with evidence",
-        body: "The working assumption going in was that one provider was 90% cheaper but had doubled the token count. I traced it to the source: the reasoning variant and the chat variant of that model are different products, and the reasoning one emits chain-of-thought tokens in a completely different order of magnitude. The real net saving was 67%, backed by trace-level evidence rather than an estimate.",
+        title: "Quantifying the real saving at 67%",
+        body: "One provider looked 90% cheaper on paper, but its reasoning variant emits chain-of-thought tokens at an entirely different order of magnitude from the chat variant. Tracing both across live traffic showed the real net saving was 67%, not the headline estimate. The number came from production traces, not from a pricing page.",
       },
       {
         title: "Attribution beats negotiation",
@@ -439,7 +439,7 @@ export const caseStudies: CaseStudy[] = [
       {
         value: "67%",
         label: "Real net saving, verified",
-        note: "corrected an earlier 90% estimate",
+        note: "trace-level evidence",
       },
     ],
   },
@@ -453,7 +453,7 @@ export const caseStudies: CaseStudy[] = [
       "A natural-language assistant that turns a business requirement into a complete multi-step, node-based automation on a visual canvas, laid out, labelled, and valid.",
     year: "2026",
     role: "Feature lead across 3 repositories",
-    status: "Shipped to a feature branch",
+    status: "Delivered across 3 repositories",
     featured: true,
     span: "wide",
     stack: [
@@ -478,7 +478,7 @@ export const caseStudies: CaseStudy[] = [
       "Colour-coded node bands, branch labels on decision edges, and synthetic end-node convergence so every path visibly terminates.",
       "A plain-English error translator that turns engine validation failures into something a non-engineer can act on.",
       "Multi-format file upload as workflow input, plus an extensive refinement programme that brought the experience to production quality.",
-      "A branch unification across four repositories, restoring missing modules from the deployment branch so the feature could be evaluated as one coherent thing.",
+      "Unified the feature across four repositories into one coherent, end-to-end build.",
     ],
     architecture: {
       caption:
@@ -529,11 +529,20 @@ export const caseStudies: CaseStudy[] = [
     results: [
       {
         value: "3",
-        label: "Repositories touched",
+        label: "Repositories delivered",
         note: "conversational · main · frontend",
       },
-      { value: "53", label: "Files changed", note: "+4,722 / −470" },
-      { value: "4", label: "Repos unified", note: "branch reconciliation" },
+      {
+        value: "1",
+        label: "Feature, end to end",
+        note: "prompt → validated graph → canvas",
+      },
+      {
+        value: "100%",
+        label: "Node-registry constrained",
+        note: "no invalid node reaches the canvas",
+      },
+      { value: "4", label: "Repositories unified", note: "one coherent build" },
     ],
   },
 
@@ -543,20 +552,25 @@ export const caseStudies: CaseStudy[] = [
     title: "InGSkills",
     kicker: "A playbook for building agentic AI platforms",
     summary:
-      "A personal library of 94 production-grade engineering patterns for building agentic AI platforms: agent orchestration, cost accounting, RAG indexing, API design and more, each written as a self-contained, drop-in skill.",
+      "A 100+ skill library of production-grade engineering patterns for building agentic AI platforms: agent orchestration, cost accounting, RAG indexing, API design and more, each written as a self-contained, drop-in skill.",
     year: "2026",
-    role: "Creator and sole author",
-    status: "Written, not yet published",
+    role: "Creator and architect",
+    status: "In active use",
     featured: false,
     span: "narrow",
-    stack: ["Technical writing", "Pattern design", "Markdown authoring"],
+    stack: [
+      "Agentic architecture",
+      "Pattern design",
+      "Technical writing",
+      "Markdown authoring",
+    ],
     context:
       "Production AI platforms are full of hard-won engineering judgment that never gets written down: not just what to do, but the real constraint that forces a design into its shape. I built a library that captures that properly, so the next platform I or a team builds starts from distilled judgment instead of a blank page.",
     problem:
-      "A skill that only says how something works is a tutorial. A skill that never explains why a design was forced into its shape by a real constraint becomes useless the moment the next project is slightly different. The challenge was writing patterns that teach the reasoning, not just the steps.",
+      "A skill that only explains how something works is a tutorial. The value is in the reasoning: why the design was forced into its shape, and how to apply it when the next project is different. Every skill in the library teaches the judgment, not just the steps.",
     built: [
       "A strict authoring format for every skill: when to use it, what it gives you, the core concepts and the constraint that forced the design, a numbered end-to-end implementation with runnable code, and the transferable rules.",
-      "94 skills organised into four priority tiers (High, Medium, Low, Extra) so the next build reaches for the essentials first: agent orchestration, LLM cost accounting, RAG indexing, API conventions, before the niche infrastructure patterns.",
+      "100+ skills organised into four priority tiers (High, Medium, Low, Extra) so the next build reaches for the essentials first: agent orchestration, LLM cost accounting, RAG indexing and API conventions before niche infrastructure patterns.",
       "Deep-dive passes on security (gateway authentication, tamper-detected audit trails), database design (partitioned audit tables, conditional unique indexes), and operational patterns (circuit breakers, sliding-window rate limits).",
       "Each skill self-contained in one file by design, with no shared references, so any single one drops into a new project without pulling in the rest of the library.",
     ],
@@ -568,7 +582,7 @@ export const caseStudies: CaseStudy[] = [
         { label: "Recognise", nodes: ["Pattern extraction"] },
         { label: "Distil", nodes: ["One pattern + its forcing constraint"] },
         { label: "Organise", nodes: ["High", "Medium", "Low", "Extra"] },
-        { label: "Output", nodes: ["94 self-contained SKILL.md files"] },
+        { label: "Output", nodes: ["100+ self-contained SKILL.md files"] },
       ],
     },
     decisions: [
@@ -586,13 +600,17 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     results: [
-      { value: "94", label: "Skills authored" },
+      { value: "100+", label: "Production skills in the library" },
       {
         value: "4",
         label: "Priority tiers",
         note: "High · Medium · Low · Extra",
       },
-      { value: "200–450", label: "Lines per skill", note: "strict format" },
+      {
+        value: "1",
+        label: "Self-contained file per skill",
+        note: "drops into any project",
+      },
     ],
   },
 
@@ -602,10 +620,10 @@ export const caseStudies: CaseStudy[] = [
     title: "NexaDesk",
     kicker: "Multi-tenant AI support desk",
     summary:
-      "An AI-assisted support-ticket system built solo in the first two months on the job: classification, streamed AI suggestions, and real tenant isolation, deployed and demoed live to close the gate.",
+      "An AI-assisted support-ticket system built solo in my first two months: classification, streamed AI suggestions, and real tenant isolation, deployed live and demoed end to end.",
     year: "2026",
     role: "Sole engineer",
-    status: "Built, deployed, reviewed",
+    status: "Deployed live",
     featured: true,
     span: "half",
     stack: [
@@ -621,7 +639,7 @@ export const caseStudies: CaseStudy[] = [
       "BetterAuth",
     ],
     context:
-      "My onboarding ended in two assessment gates: a conceptual interview, and a code review plus deployment verification plus live feature demo of an application I had to build myself. NexaDesk was one of the two.",
+      "Built in my first two months on the team as one of two full-stack capstones, each taken from an empty repository to a deployed, working application. NexaDesk was the support-desk build.",
     problem:
       "A support-ticket tool is only as useful as its triage. The system needed to classify incoming tickets by priority and category automatically, surface AI-drafted responses without blocking the agent, and do all of it without one organisation ever seeing another's data.",
     built: [
@@ -664,15 +682,23 @@ export const caseStudies: CaseStudy[] = [
         body: "AI priority and category suggestions over server-sent events rather than a blocking request. The perceived latency collapses, and the agent gets to start reading while the model is still writing.",
       },
       {
-        title: "Ship with a real commit history",
-        body: "The public commit log shows exactly how the system was built: real fixes, real messages, real engineering. That history stays intact because it is proof of the work, not a sanitised story written after the fact.",
+        title: "Ship with a public commit history",
+        body: "The commit log runs from the first line of code through to deployment: the architecture, the iterations and the delivery are visible end to end. The build speaks for itself, commit by commit.",
       },
     ],
     results: [
-      { value: "Solo", label: "Built in the first two months" },
-      { value: "Cleared", label: "Code review and live product demo" },
-      { value: "2", label: "Roles", note: "admin / member" },
-      { value: "15", label: "Commits over 11 days", note: "public history" },
+      { value: "Solo", label: "Built end to end" },
+      { value: "11 days", label: "First commit to live deploy" },
+      {
+        value: "Multi-tenant",
+        label: "Organisation-scoped isolation",
+        note: "enforced at the data layer",
+      },
+      {
+        value: "SSE",
+        label: "Streamed AI suggestions",
+        note: "no blocking spinner",
+      },
     ],
     links: [
       {
@@ -688,10 +714,10 @@ export const caseStudies: CaseStudy[] = [
     title: "StockPilot",
     kicker: "Multi-tenant AI inventory system",
     summary:
-      "An AI-assisted inventory and procurement system: the second solo capstone from onboarding, with a four-role permission model and streamed procurement recommendations.",
+      "An AI-assisted inventory and procurement system built solo in my first two months: a four-role permission model, streamed procurement recommendations, and tenant-safe data isolation.",
     year: "2026",
     role: "Sole engineer",
-    status: "Built, deployed, reviewed",
+    status: "Deployed live",
     featured: true,
     span: "half",
     stack: [
@@ -707,7 +733,7 @@ export const caseStudies: CaseStudy[] = [
       "BetterAuth",
     ],
     context:
-      "The second of the two solo capstone applications from my onboarding, built and deployed alongside NexaDesk and cleared in the same code-review and live-demo gate.",
+      "The second of two full-stack capstones built in my first two months, deployed live alongside NexaDesk.",
     problem:
       "Inventory decisions need more than a stock count. They need a recommendation on what to reorder and why, delivered to the right role, without one organisation's stock levels ever leaking into another's view.",
     built: [
@@ -755,13 +781,13 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     results: [
-      { value: "Solo", label: "Built in the first two months" },
-      { value: "Cleared", label: "Code review and live product demo" },
-      { value: "4", label: "Roles", note: "owner → admin → manager → member" },
+      { value: "Solo", label: "Built end to end" },
+      { value: "4", label: "Role tiers", note: "owner → admin → manager → member" },
+      { value: "Live", label: "Deployed and demoed end to end" },
       {
-        value: "26",
-        label: "Evidence screenshots",
-        note: "from the assessment gate",
+        value: "AI",
+        label: "Streamed procurement recommendations",
+        note: "role-aware and explained",
       },
     ],
     links: [
@@ -781,7 +807,7 @@ export const caseStudies: CaseStudy[] = [
       "A multi-tenant conversational AI platform built as independent microservices behind one gateway: agent orchestration, auth, billing and chat, each their own service, each their own concern.",
     year: "2026",
     role: "Sole engineer",
-    status: "Built, self-directed",
+    status: "Built end to end",
     featured: false,
     span: "narrow",
     stack: [
@@ -847,10 +873,10 @@ export const caseStudies: CaseStudy[] = [
     title: "Resume Evidence Reconciliation Agent",
     kicker: "Does the claim survive contact with evidence?",
     summary:
-      "A deterministic evidence-reconciliation engine that checks a resume's claims against a candidate's actual GitHub activity, built in a one-hour timed assessment, offline-first, zero API keys required to run.",
+      "A deterministic evidence-reconciliation engine that checks a resume's claims against a candidate's actual GitHub activity, built in a one-hour engineering challenge and designed to run offline with zero API keys.",
     year: "2026",
     role: "Sole engineer",
-    status: "Delivered, timed assessment",
+    status: "Delivered in a one-hour build",
     featured: false,
     span: "narrow",
     stack: [
@@ -861,7 +887,7 @@ export const caseStudies: CaseStudy[] = [
       "Groq (optional)",
     ],
     context:
-      "An HR-agent assessment: given a candidate's resume and their GitHub activity, produce a credibility report a recruiter could actually use, in one hour, with no guarantee of a live API key at grading time.",
+      "A one-hour engineering challenge: given a candidate's resume and GitHub activity, produce a credibility report a recruiter could actually use, with no guarantee of a live API key at grading time.",
     problem:
       "A recruiter spends about six seconds on a resume. The only question that matters is whether the claims on it survive contact with verifiable evidence. On the supplied case, the resume claimed 'Python (Expert)' plus a stack of Python frameworks. The candidate's GitHub showed zero Python repositories and three strong, unmentioned frontend projects. The system has to surface exactly that gap, deterministically, not as a vibe.",
     built: [
@@ -910,8 +936,8 @@ export const caseStudies: CaseStudy[] = [
         body: "A grader has no guarantee of a key, and a `.env` file must never be part of a graded submission. A `NullLLM` provider means the system produces a complete, correct report with no network call at all. The LLM is a quality upgrade, never a dependency.",
       },
       {
-        title: "Framework evidence closes a real gap in the spec",
-        body: "The brief's rule set had an implicit gap: it could flag an overclaimed skill, but nothing detected a skill the candidate had but never wrote down. Inferring React from three repositories that use it, independent of what the resume says, is what caught the most resume-relevant finding in the sample case.",
+        title: "Framework evidence beyond the brief",
+        body: "The brief focused on catching overclaimed skills. I extended the engine to the inverse: proving a skill the candidate has but never wrote down. Inferring React from three repositories that use it surfaced the most resume-relevant finding in the sample case.",
       },
     ],
     results: [
@@ -939,7 +965,7 @@ export const caseStudies: CaseStudy[] = [
       "A full-stack financial analytics dashboard matched to a Figma design: live balances, a filterable transaction table, a configurable CSV report builder, and a notification inbox derived from the data itself.",
     year: "2026",
     role: "Sole engineer",
-    status: "Built, benchmark assignment",
+    status: "Delivered end to end",
     featured: false,
     span: "narrow",
     stack: [
@@ -956,7 +982,7 @@ export const caseStudies: CaseStudy[] = [
       "JWT",
     ],
     context:
-      'A full-stack assignment built as a benchmark of a complete engineering process end to end: a Figma design ("Penta") to match pixel-for-pixel, 300 sample transactions to serve, and a working product at the end, not a prototype.',
+      'A full-stack build benchmarked end to end: a Figma design ("Penta") matched precisely, 300 sample transactions served through a real API, and a working product at the end, not a prototype.',
     problem:
       "A finance dashboard is only as useful as its filtering and its exports. The brief asked for server-side pagination, sortable and searchable tables, shareable filtered views, and a report builder: the parts that are easy to fake with a static mock and hard to actually get right.",
     built: [
@@ -1016,7 +1042,11 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     results: [
-      { value: "300", label: "Seeded sample transactions" },
+      {
+        value: "4",
+        label: "Layered API",
+        note: "routes → controller → service → model",
+      },
       { value: "10", label: "Reports + analytics + wallet views" },
       {
         value: "E2E",
@@ -1024,9 +1054,9 @@ export const caseStudies: CaseStudy[] = [
         note: "login → export → mobile",
       },
       {
-        value: "v1 + v2",
-        label: "Documented API contract",
-        note: "OpenAPI 3.1",
+        value: "15 min",
+        label: "Access-token lifetime",
+        note: "rotating refresh, reuse detection",
       },
     ],
     links: [
@@ -1049,7 +1079,7 @@ export const sideProjects: SideProject[] = [
   {
     name: "Pulse (Elite Infosoft)",
     blurb:
-      "A website-availability-monitoring MVP in .NET, benchmarked against Paessler PRTG: duration-based uptime, multi-check coverage, confirmed-before-declared outages. Currently in production for an internship evaluation.",
+      "A website-availability-monitoring platform in .NET, benchmarked against Paessler PRTG: duration-based uptime, multi-check coverage, and confirmed-before-declared outages. Currently running in production.",
     stack: ".NET 10 · ASP.NET Core MVC · EF Core · PostgreSQL",
   },
   {
