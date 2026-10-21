@@ -2,6 +2,8 @@ import type { Capability, Metric } from "@/lib/types";
 
 export const profile = {
   fullName: "Shabbir Malegaonwala",
+  /** Full legal name, used only in the footer copyright line. */
+  legalName: "Shabbir Shk.Ezzuddin Malegaonwala",
   firstName: "Shabbir",
   accentName: "Malegaonwala",
   initials: "S.M.",

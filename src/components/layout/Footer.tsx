@@ -98,11 +98,10 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col gap-3 border-t border-hairline pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-16 border-t border-hairline pt-6">
           <p className="hud">
-            © {new Date().getFullYear()} {profile.fullName}
+            © {new Date().getFullYear()} {profile.legalName}
           </p>
-          <p className="hud">Built with Next.js · Deployed on Vercel</p>
         </div>
       </div>
     </footer>

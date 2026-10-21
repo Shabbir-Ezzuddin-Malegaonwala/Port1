@@ -6,7 +6,7 @@ export const experience: ExperienceEntry[] = [
     href: "https://rubikonlabs.com/",
     role: "AI Engineer",
     period: "Sep 2025 – Present",
-    location: "Pune, India",
+    location: "Dubai, UAE",
     summary:
       "Building on an enterprise agentic AI platform: the workflow automation layer, the observability and cost work behind it, and the production code, tests and tooling that keep all of it honest.",
     highlights: [
