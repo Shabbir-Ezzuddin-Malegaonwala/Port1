@@ -25,7 +25,7 @@ export function StatusChip() {
   return (
     <div className="hud inline-flex items-center gap-2.5 border border-hairline bg-elevated/70 px-3.5 py-1.5 backdrop-blur-md">
       <span className="pulse-dot size-1.5 bg-live" aria-hidden />
-      <span className="text-ink/70">Open to work</span>
+      <span className="text-ink/70">Open for projects</span>
       <span className="text-hairline-strong" aria-hidden>
         /
       </span>

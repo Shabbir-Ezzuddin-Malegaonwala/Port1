@@ -33,11 +33,11 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(profile.siteUrl),
   title: {
-    default: `${profile.fullName} · ${profile.role}`,
+    default: `${profile.fullName} · AI Products & Automation`,
     template: `%s · ${profile.fullName}`,
   },
   description:
-    "AI Engineer building agentic systems, LLM cost and observability tooling, and data platforms that reach production. Case studies with measured outcomes.",
+    "AI products, automation and data intelligence that remove repetitive work and deliver measurable outcomes. Explore the work.",
   keywords: [
     "AI Engineer",
     "LLM Engineer",
@@ -55,15 +55,15 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: profile.siteUrl,
     siteName: profile.fullName,
-    title: `${profile.fullName} · ${profile.role}`,
+    title: `${profile.fullName} · AI Products & Automation`,
     description:
-      "Agentic systems, LLM cost engineering, and data platforms that reach production.",
+      "AI products, automation and data intelligence, built to run in the real world.",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${profile.fullName} · ${profile.role}`,
+    title: `${profile.fullName} · AI Products & Automation`,
     description:
-      "Agentic systems, LLM cost engineering, and data platforms that reach production.",
+      "AI products, automation and data intelligence, built to run in the real world.",
   },
   robots: { index: true, follow: true },
 };

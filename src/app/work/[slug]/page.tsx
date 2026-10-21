@@ -94,19 +94,19 @@ export default async function CaseStudyPage({
         </ul>
       </header>
 
-      <Section index="01" label="Context">
+      <Section index="01" label="The opportunity">
         <p className="max-w-2xl text-pretty text-lg leading-relaxed text-ink/85 text-justify hyphens-auto">
           {study.context}
         </p>
       </Section>
 
-      <Section index="02" label="The problem">
+      <Section index="02" label="The challenge">
         <p className="max-w-2xl text-pretty text-lg leading-relaxed text-ink/85 text-justify hyphens-auto">
           {study.problem}
         </p>
       </Section>
 
-      <Section index="03" label="What I built">
+      <Section index="03" label="The product">
         <ul className="space-y-4">
           {study.built.map((b, i) => (
             <li key={b} className="flex gap-4">
@@ -121,14 +121,14 @@ export default async function CaseStudyPage({
         </ul>
       </Section>
 
-      <Section index="04" label="Architecture">
+      <Section index="04" label="How it works">
         <ArchitectureDiagram
           caption={study.architecture.caption}
           layers={study.architecture.layers}
         />
       </Section>
 
-      <Section index="05" label="Decisions that defined the build">
+      <Section index="05" label="What sets it apart">
         <div className="space-y-5">
           {study.decisions.map((d) => (
             <div key={d.title} className="panel bg-elevated/50 p-6 md:p-7">
@@ -143,8 +143,8 @@ export default async function CaseStudyPage({
         </div>
       </Section>
 
-      <Section index="06" label="Outcomes">
-        <div className="grid gap-px overflow-hidden border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-3">
+      <Section index="06" label="The impact">
+        <div className="grid gap-px overflow-hidden border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-4">
           {study.results.map((r) => (
             <div key={r.label} className="bg-elevated/60 p-6">
               <p className="tabular text-2xl leading-none text-gold">
@@ -158,7 +158,7 @@ export default async function CaseStudyPage({
       </Section>
 
       {study.links && study.links.length > 0 && (
-        <Section index="07" label="Links">
+        <Section index="07" label="See it live">
           <ul className="flex flex-wrap gap-3">
             {study.links.map((l) => (
               <li key={l.href}>

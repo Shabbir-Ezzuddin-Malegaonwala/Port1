@@ -20,7 +20,7 @@ export function ProofStrip() {
         </Reveal>
         <Reveal delay={0.05}>
           <p className="mt-4 max-w-xl text-pretty text-sm text-muted">
-            A track record measured in production.
+            A track record measured in outcomes.
           </p>
         </Reveal>
       </div>

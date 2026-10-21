@@ -21,14 +21,14 @@ const CHANNELS = [
     value: "Shabbir-Ezzuddin-Malegaonwala",
     href: profile.github,
     Icon: GithubIcon,
-    note: "Code, case studies and the systems behind them",
+    note: "Open builds and experiments",
   },
   {
     label: "LinkedIn",
     value: "shabbir-malegaonwala",
     href: profile.linkedin,
     Icon: LinkedinIcon,
-    note: "Background, recommendations, updates",
+    note: "Profile, updates and recommendations",
   },
   {
     label: "Instagram",
@@ -38,19 +38,19 @@ const CHANNELS = [
     note: "Behind the scenes, less filtered",
   },
   {
-    label: "Request résumé",
-    value: "Sent on request",
-    href: profile.resumeHref,
+    label: "Start a project",
+    value: "One email is enough",
+    href: profile.ctaHref,
     Icon: FileText,
-    note: "Ask and I will send it straight back",
+    note: "Tell me the problem and the outcome you need",
   },
 ];
 
 const FIT = [
-  "AI / LLM engineering roles: agentic systems, RAG, evaluation and observability",
-  "Data science and analytics roles with a production engineering edge",
-  "Consulting on LLM cost, latency and reliability for teams already running something",
-  "Anything where the hard part is making a model behave the same way twice",
+  "AI products from concept to launch",
+  "Automation that removes a recurring cost from your business",
+  "A second opinion on an AI system that is slow, expensive or unreliable",
+  "Partnerships where the hard part is making AI dependable at scale",
 ];
 
 export default function ContactPage() {
@@ -63,14 +63,13 @@ export default function ContactPage() {
         </div>
 
         <h1 className="mt-7 max-w-2xl text-balance text-[clamp(2.4rem,5.6vw,4rem)] font-semibold leading-[1.06] tracking-[-0.035em]">
-          The fastest way to reach me is
-          <span className="accent"> email.</span>
+          Tell me what needs to
+          <span className="accent"> work better.</span>
         </h1>
 
         <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-muted text-justify hyphens-auto">
-          I read everything and reply to anything that is not a template. If you
-          are hiring, a line about the actual problem your team is stuck on gets
-          my attention faster than a job title.
+          I read every message and reply personally. Tell me the problem on
+          your plate and what a win looks like, and we can start from there.
         </p>
 
         <div className="mt-8">

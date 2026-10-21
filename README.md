@@ -1,12 +1,12 @@
 # SEM Corp. — Shabbir Malegaonwala
 
-Personal portfolio of **Shabbir Malegaonwala**, AI Engineer — AI agents and multi-agent bots,
-workflow automation, and full-stack AI applications.
+Personal portfolio of **Shabbir Malegaonwala**, AI Engineer — AI products, automation platforms
+and data intelligence.
 
-Twelve case studies with real architecture and measured outcomes.
+Twelve case studies, each framed around the opportunity, the product and the outcome.
 
-The CV is deliberately **not** committed — it carries personal details, so the site asks
-visitors to request it by email instead.
+The CV is deliberately **not** committed — it carries personal details. The site invites
+visitors to start a project by email instead.
 
 ---
 

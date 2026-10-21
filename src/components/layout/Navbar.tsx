@@ -95,8 +95,8 @@ export function Navbar() {
             </Link>
           ))}
           <ThemeToggle />
-          <a href={profile.resumeHref} className="btn-primary !px-5 !py-2.5">
-            Request résumé
+          <a href={profile.ctaHref} className="btn-primary !px-5 !py-2.5">
+            {profile.ctaLabel}
             <ArrowUpRight className="size-3" />
           </a>
         </div>
@@ -136,11 +136,11 @@ export function Navbar() {
           ))}
           <li className="mt-5">
             <a
-              href={profile.resumeHref}
+              href={profile.ctaHref}
               onClick={() => setOpen(false)}
               className="btn-primary w-full justify-center"
             >
-              Request résumé
+              {profile.ctaLabel}
               <ArrowUpRight className="size-3.5" />
             </a>
           </li>

@@ -27,16 +27,16 @@ export function Hero() {
           <StatusChip />
 
           <h1 className="display mt-8 text-[clamp(2.75rem,6.6vw,5.25rem)]">
-            <span className="block">Building AI systems</span>
+            <span className="block">AI systems that</span>
             <span className="block">
-              that reach <span className="accent">production.</span>
+              run the <span className="accent">work.</span>
             </span>
           </h1>
 
           <p className="mt-8 max-w-xl text-pretty leading-relaxed text-muted text-justify hyphens-auto">
-            I build AI agents and multi-agent bots, workflow automation, and
-            full-stack AI applications, so your systems run themselves. One
-            touch or one voice, and the result appears.
+            AI agents, automation platforms and digital products that take
+            repetitive work off people&apos;s desks and turn it into outcomes.
+            Built to run in the real world.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-3">
@@ -45,8 +45,8 @@ export function Hero() {
               <ArrowUpRight className="size-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </Link>
 
-            <a href={profile.resumeHref} className="btn-ghost">
-              Request résumé
+            <a href={profile.ctaHref} className="btn-ghost">
+              {profile.ctaLabel}
             </a>
 
             <div className="ml-1 flex items-center gap-1">

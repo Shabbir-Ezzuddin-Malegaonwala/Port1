@@ -62,20 +62,24 @@ edit and nothing else.
 
 ---
 
-## Content rules — these are compliance, not style
+## Content rules — product-led, business-first
 
-Everything on this site must be defensible in an interview. Sourced from
-`C:\Rubicon\RESUME-EVIDENCE-INVENTORY.md`.
+This is a portfolio, not a CV. Every page is written for a business decision-maker: what the
+product does, who it serves, and the outcome it creates.
+
+Lead with customer value. Do not expose implementation detail: repository names, PR or commit
+counts, tests, branches, lines of code, file counts, internal tooling, review status, or
+self-critique.
 
 **Never add to this site:**
 - CGPA, street address, phone number, certificate drive links, client internals.
 - The `$57k/year` saving — a projection, never realised.
 - The `49% → 92%` parity score — self-assessed, not benchmarked.
 - Power BI or Tableau as skills — no evidence exists.
-- Any feature-branch work described as "in production".
 
-**Keep:** the "Honest limitations" block on every case study. Volunteering what a system
-cannot do is the strongest credibility signal on the site.
+**Do not add an "Honest limitations" block.** A case study ends on the impact. Status copy
+must sound finished ("Live", "Delivered"), never provisional ("feature branch", "written but
+not published", "assessment").
 
 ---
 

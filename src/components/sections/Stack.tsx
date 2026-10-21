@@ -9,9 +9,9 @@ export function Stack() {
         <SectionHeader
           index="05"
           label="Stack"
-          title="The tools, and"
-          accent="the ones I ship with"
-          lede="Everything listed here appears in something I have built. If I have only read about it, it is not on this page."
+          title="A deep toolkit,"
+          accent="chosen for outcomes"
+          lede="Every technology here is in production somewhere. The tool changes; the outcome does not."
         />
 
         <div className="space-y-px overflow-hidden border border-hairline bg-hairline">

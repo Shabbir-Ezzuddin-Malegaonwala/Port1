@@ -7,7 +7,7 @@ import { caseStudies, sideProjects } from "@/content/work";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Case studies: a real-estate valuation engine, a production streaming refactor, LLM cost engineering, an agentic workflow builder, two multi-tenant SaaS apps, and a 51,532-row data pipeline.",
+    "A portfolio of AI products, automation platforms and data systems, with the opportunity, the product and the outcome behind each.",
 };
 
 export default function WorkPage() {
@@ -21,12 +21,12 @@ export default function WorkPage() {
         </div>
 
         <h1 className="mt-7 max-w-3xl text-balance text-[clamp(2.4rem,5.6vw,4rem)] font-semibold leading-[1.06] tracking-[-0.035em]">
-          Everything here
-          <span className="accent"> actually got built.</span>
+          Products built for
+          <span className="accent"> the real world.</span>
         </h1>
         <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted text-justify hyphens-auto">
-          Each case study covers the architecture, the decisions behind it, and
-          the measured outcomes.
+          Each case study follows the same thread: the opportunity, what the
+          product does, and the difference it made.
         </p>
       </header>
 
@@ -45,7 +45,7 @@ export default function WorkPage() {
         </div>
 
         <h2 className="mt-6 text-[clamp(1.75rem,3.6vw,2.5rem)] font-semibold tracking-[-0.03em]">
-          More builds and
+          More products and
           <span className="accent"> experiments</span>
         </h2>
 

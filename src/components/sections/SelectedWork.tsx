@@ -19,9 +19,9 @@ export function SelectedWork() {
       <SectionHeader
         index="03"
         label="Selected work"
-        title="Systems I have"
-        accent="taken to production"
-        lede="Each of these has a full case study behind it: the architecture, the decisions, and the measured outcomes."
+        title="Selected"
+        accent="work that performs"
+        lede="Real products, real users, real outcomes. Each case study shows the opportunity, what the product does, and the difference it made."
       />
 
       <div className="grid gap-5 md:grid-cols-12">

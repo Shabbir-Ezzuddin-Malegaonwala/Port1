@@ -21,7 +21,7 @@ export function Footer() {
           <div className="max-w-sm">
             <p className="text-[clamp(1.5rem,3vw,2rem)] font-semibold leading-tight tracking-[-0.03em]">
               Let&apos;s build something
-              <span className="accent"> worth shipping.</span>
+              <span className="accent"> that moves the business.</span>
             </p>
             <a
               href={`mailto:${profile.email}`}
@@ -87,10 +87,10 @@ export function Footer() {
                 </li>
                 <li>
                   <a
-                    href={profile.resumeHref}
+                    href={profile.ctaHref}
                     className="text-sm text-muted transition-colors hover:text-ink"
                   >
-                    Request résumé
+                    {profile.ctaLabel}
                   </a>
                 </li>
               </ul>

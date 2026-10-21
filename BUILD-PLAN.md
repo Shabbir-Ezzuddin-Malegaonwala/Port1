@@ -28,10 +28,9 @@ that run them.*
 **The mission, in his words:** to make people's lives futuristic, easier, simpler —
 one touch or one voice, and the result appears.
 
-**The wedge.** Most AI portfolios show notebooks and demos. His differentiator is the
-production half: agentic systems that survive real users, observability, cost engineering,
-regression tests, reviewed and merged code. That leads. ML and data breadth proves range and
-comes second.
+**The wedge.** Most AI portfolios show notebooks and demos. His differentiator is products
+that run real businesses: live automation, measurable cost savings, and platforms people use
+every day. That leads. The technical depth underneath earns trust on the second click.
 
 **Three pillars** — these structure the whole site:
 
@@ -45,11 +44,11 @@ comes second.
 
 ## 3. Brand personality
 
-Curious, creative, precise. Builds things that work, then says plainly what they cannot do.
+Curious, creative, precise. Builds products that work, then makes the value impossible to miss.
 
-**Voice:** direct and technical without jargon-stacking. First person. Short declarative
-sentences. Numbers instead of adjectives. No marketing throat-clearing — never
-"empowering businesses to leverage", always "it did this, here is the measurement".
+**Voice:** direct and confident without jargon-stacking. First person. Short declarative
+sentences. Outcomes instead of adjectives. Write like a founder selling a product, not an
+engineer explaining a diff: what it does, who it serves, and the difference it made.
 
 ---
 
@@ -91,11 +90,10 @@ shapes — is extracted from Stitch and becomes the authority for the build.
 ```
 /                     cinematic scroll home
 /work                 index of all case studies
-/work/[slug]          deep case study ×6
+/work/[slug]          deep case study ×12
 /about                story, photographs, beyond the code
 /contact              email-first, availability
-/resume               serves the CV PDF
-                      (reserved, not built: /blog)
+                      (reserved, not built: /resume, /blog)
 ```
 
 ### Home — section order
@@ -114,40 +112,29 @@ shapes — is extracted from Stitch and becomes the authority for the build.
 
 ### Case study template
 
-`Context → Problem → What I built → Architecture diagram → Decisions I would defend →
-Results (measured) → Honest limitations → Stack · Links`
+`The opportunity → The challenge → The product → How it works → What sets it apart →
+The impact → Links`
 
-The **Honest limitations** block stays on every case study. Volunteering what a system cannot
-do is the fastest route to a real technical conversation, and it is rare enough to be a
-differentiator.
+There is no limitations block. A case study ends on the outcome. The product story leads;
+implementation detail stays out of the page entirely.
 
 ---
 
 ## 6. Content
 
-### The six case studies
+### The case studies
 
-1. **Real-Estate Valuation Intelligence** — 52,647 deduplicated listings from 6 portals, a
-   19-table provenance-tracked schema, 11 API endpoints, 161 tests, a 20-sheet client
-   workbook. Deliberately no ML, because the market publishes no transaction prices to train
-   against. *Delivered to client.*
-2. **Streaming Event Centralisation** — scattered inline event emission refactored into one
-   module across four agent classes, proven byte-identical by 13 regression tests, 3 CI checks
-   green. *Merged to production.*
-3. **LLM Cost and Token Engineering** — traced a one-word request billing 8,334 input tokens;
-   found acknowledgement calls consuming 28–36% of heavy-trace cost; audited 341 chats and
-   202 agent runs; benchmarked 4 models; corrected a stated 90% saving to a real 67%.
-   *Analysis delivered.*
-4. **Agentic Workflow Builder** — natural language to a valid, laid-out, multi-step automation
-   graph across 3 repositories, 53 files, +4,722/−470. *Shipped to a feature branch.*
-5. **NexaDesk & StockPilot** — two multi-tenant AI SaaS applications built solo in the first
-   two months, both through a senior code review and live demo gate. *Built, deployed, reviewed.*
-6. **Lead Enrichment at 51,532 Rows** — profiled, re-schemad to 92 frozen columns, gated
-   12/12 and 17/17 — then measured a 15–33% structural ceiling and escalated a costed
-   buy-vs-build recommendation instead of losing an arms race. *Recommendation escalated.*
+`src/content/work.ts` is the source of truth. Every case study is written as a product story:
+the opportunity, the challenge, the product, how it works, what sets it apart, and the impact.
 
-Plus a compact grid of smaller builds: NLP resume screening, Career Coach Agent, CortexAI,
-Digivyapar, stock-market pipeline, the ML model bank, sentiment analysis, food-delivery DBMS.
+Product scope includes a valuation intelligence platform, real-time AI delivery, AI cost
+reduction, an agentic workflow builder, a 100+ capability AI playbook, two multi-tenant SaaS
+products, a conversational AI platform, an AI hiring intelligence engine, a financial command
+centre, and a live SME automation product.
+
+Plus a compact grid of smaller products and experiments: NLP resume screening, Career Coach
+Agent, Pulse, ParkSecure, Digivyapar, stock-market pipeline, the ML model bank, sentiment
+analysis and food-delivery DBMS.
 
 ### Hard content rules
 

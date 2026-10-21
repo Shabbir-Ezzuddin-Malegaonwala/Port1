@@ -28,13 +28,13 @@ export function ContactCTA() {
           </div>
 
           <h2 className="mx-auto mt-7 max-w-2xl text-balance text-[clamp(2rem,4.6vw,3.5rem)] font-semibold leading-[1.08] tracking-[-0.03em]">
-            Have a system that needs to
-            <span className="accent"> actually work?</span>
+            Let&apos;s turn AI into
+            <span className="accent"> your advantage.</span>
           </h2>
 
           <p className="mx-auto mt-5 max-w-lg text-balance text-muted">
             {profile.availabilityLine}. The fastest way to reach me is email. I
-            reply to everything that is not a template.
+            read every message and reply personally.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">

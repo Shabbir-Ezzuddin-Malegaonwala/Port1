@@ -9,25 +9,25 @@ import { achievements, education, languages } from "@/content/career";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "AI Engineer in Pune. Production agentic systems, LLM cost and observability engineering, and the data work underneath it.",
+    "The story behind SEM Corp: AI products, automation and data intelligence that remove repetitive work and deliver measurable outcomes.",
 };
 
 const PRINCIPLES = [
   {
-    title: "Measure before you build",
-    body: "The strongest architecture starts with evidence. I measure the real workload before committing to a design, so the system is built around facts rather than assumptions.",
+    title: "Start with the outcome",
+    body: "Every build starts with the result the business needs, not the technology I want to use. That keeps the work pointed at value instead of activity.",
   },
   {
-    title: "Make the next change easy",
-    body: "Code is read far more than it is written. I optimise for the next engineer: clean boundaries, small diffs, and systems that are easy to extend without a rewrite.",
+    title: "Adoption is the deliverable",
+    body: "A product nobody uses is not finished. I design for the person who will open it every day, not for the demo that makes it look good.",
   },
   {
-    title: "Show the working",
-    body: "A number nobody can interrogate is a number nobody should trust. Explainability is not a feature added at the end; it is a design constraint from the first commit.",
+    title: "Make it clear",
+    body: "The best systems explain themselves. I make the interface, the report and the recommendation easy to trust at a glance.",
   },
   {
-    title: "Finish what I start",
-    body: "Shipping is the standard. I scope for a complete, working release over a larger one left half-finished, because value only exists in the part that runs.",
+    title: "Ship, then sharpen",
+    body: "A live product teaches faster than a perfect plan. I get value into people's hands, then make it better with real usage.",
   },
 ];
 
@@ -42,8 +42,8 @@ export default function AboutPage() {
         </div>
 
         <h1 className="mt-7 max-w-3xl text-balance text-[clamp(2.4rem,5.6vw,4rem)] font-semibold leading-[1.06] tracking-[-0.035em]">
-          I build AI systems that
-          <span className="accent"> hold up in production.</span>
+          I build AI that moves
+          <span className="accent"> the business forward.</span>
         </h1>
       </header>
 
@@ -193,10 +193,10 @@ export default function AboutPage() {
           <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </Link>
         <a
-          href={profile.resumeHref}
+          href={profile.ctaHref}
           className="panel inline-flex items-center gap-2 bg-elevated px-6 py-3 text-sm font-medium transition-colors hover:bg-overlay"
         >
-          Request résumé
+          {profile.ctaLabel}
         </a>
       </Reveal>
     </div>

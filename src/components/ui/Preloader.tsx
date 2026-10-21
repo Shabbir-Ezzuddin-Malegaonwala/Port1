@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 const BOOT_LINES = [
   "init · design system",
   "mount · case studies",
-  "link · github / resume",
+  "link · github / projects",
   "ready",
 ];
 

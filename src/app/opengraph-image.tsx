@@ -36,7 +36,7 @@ export default function OpengraphImage() {
             textTransform: "uppercase",
           }}
         >
-          Open to work · Pune, India
+          Open for projects · Pune, India
         </div>
       </div>
 
@@ -64,7 +64,7 @@ export default function OpengraphImage() {
           Malegaonwala
         </div>
         <div style={{ color: "#8a97ab", fontSize: 30, marginTop: 28 }}>
-          AI Engineer · LLM Systems · Data Science
+          AI Engineer · AI Products · Automation
         </div>
       </div>
 
@@ -77,9 +77,9 @@ export default function OpengraphImage() {
         }}
       >
         {[
-          ["52,647", "listings engineered"],
-          ["13/13", "regression tests, zero drift"],
-          ["51,532", "records profiled"],
+          ["67%", "lower AI operating cost"],
+          ["Zero", "users disrupted by an upgrade"],
+          ["100+", "production AI capabilities"],
         ].map(([value, label]) => (
           <div key={label} style={{ display: "flex", flexDirection: "column" }}>
             <div style={{ color: "#d4af6a", fontSize: 38 }}>{value}</div>

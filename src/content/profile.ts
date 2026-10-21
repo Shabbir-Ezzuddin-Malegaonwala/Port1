@@ -8,31 +8,31 @@ export const profile = {
   accentName: "Malegaonwala",
   initials: "S.M.",
   role: "AI Engineer",
-  roleLong: "AI Engineer · LLM Systems · Data Science",
+  roleLong: "AI Engineer · AI Products · Automation",
   location: "Pune, India",
   timezone: "Asia/Kolkata",
   available: true,
-  availabilityLine: "Open to AI / LLM engineering roles and consulting work",
+  availabilityLine: "Available for new projects and consulting work",
 
-  headline: "I build AI systems that reach production.",
+  headline: "AI systems that run the work.",
   subhead:
-    "Agentic workflows, LLM cost and observability engineering, and data platforms, taken from a whiteboard to tested, production-grade systems.",
+    "I design and build AI agents, automation platforms and full-stack products that turn repetitive work into outcomes, live in production and built to scale.",
 
   /** Used for meta description and the about intro. Humanised, first person, no em-dashes. */
   bio: [
-    "I build technology around one question: how does it solve a real problem, not just look impressive in a demo? That question carried me through a Bachelor's in Computer Applications and a Master's at MIT World Peace University, and into AI and automation as a discipline.",
-    "I began by owning the full data lifecycle: scraping, cleaning, feature engineering, modelling, and translating the results for people who do not read code. That experience set my standard. A model that works in a notebook is a starting point; a system that works in production is the deliverable.",
-    "Today I am an AI Engineer at Rubikon Labs, building on an enterprise agentic AI platform. My focus is making models answer correctly, cheaply, and consistently at scale. Getting an agent to respond once is a demo; keeping it reliable, fast and cost-efficient under production load is the engineering I own.",
-    "Outside the day job, I run SEM Corp, the same mission in product form: AI agents, automation and software that remove repetitive work from people's lives. One touch or one voice, and the result should simply appear.",
+    "I build AI products and automation that remove repetitive work and give people their time back. My path ran through a Bachelor's in Computer Applications, a Master's at MIT World Peace University, and into AI and automation as a discipline.",
+    "I learned by owning the full data lifecycle: scraping, cleaning, feature engineering, modelling, and turning the results into decisions for people who do not read code. That set my standard. A model in a notebook is a starting point; a system in production is the deliverable.",
+    "Today I am an AI Engineer at Rubikon Labs, building on an enterprise agentic AI platform. My focus is making models answer correctly, cheaply and consistently at scale. Getting an agent to respond once is a demo; keeping it reliable, fast and cost-efficient under real demand is the engineering I own.",
+    "Outside the day job, I run SEM Corp, the same mission in product form: AI agents, automation and software that take repetitive work off people's desks. One touch or one voice, and the result simply appears.",
   ],
 
   email: "shabbirmalegaon786@gmail.com",
   github: "https://github.com/Shabbir-Ezzuddin-Malegaonwala",
   linkedin: "https://www.linkedin.com/in/shabbir-malegaonwala-950546267/",
   instagram: "https://www.instagram.com/mwshabbir",
-  resumeHref:
-    "mailto:shabbirmalegaon786@gmail.com?subject=R%C3%A9sum%C3%A9%20request&body=Hi%20Shabbir%2C%0A%0ACould%20you%20send%20me%20your%20r%C3%A9sum%C3%A9%3F%0A%0A",
-  resumeLabel: "Request résumé",
+  ctaHref:
+    "mailto:shabbirmalegaon786@gmail.com?subject=New%20project&body=Hi%20Shabbir%2C%0A%0AHere%20is%20what%20I%20need%3A%0A%0A",
+  ctaLabel: "Start a project",
   siteUrl: "https://semcorp.vercel.app",
 } as const;
 
@@ -46,58 +46,58 @@ export const profile = {
 export const proofMetrics: Metric[] = [
   {
     value: "67%",
-    label: "Real LLM cost cut, verified against live traces",
-    note: "trace-level evidence, not an estimate",
+    label: "Lower AI operating cost",
+    note: "proven on live production traffic",
   },
   {
     value: "Zero",
-    label: "Output drift in a production refactor",
-    note: "13 byte-identical regression tests",
+    label: "Users disrupted by a platform-wide AI upgrade",
+    note: "four experiences, one seamless switch",
   },
   {
     value: "6 → 1",
-    label: "Scraped sources reconciled into one explainable engine",
-    note: "every number traces to its source, no black box",
+    label: "Marketplaces unified into one intelligence engine",
+    note: "every recommendation explained",
   },
   {
-    value: "4",
-    label: "Domains delivered in",
-    note: "real estate, operations, SME automation, AI platforms",
+    value: "100+",
+    label: "Production-ready AI capabilities",
+    note: "built, proven and reused",
   },
 ];
 
 export const capabilities: Capability[] = [
   {
     index: "01",
-    title: "Production AI",
-    body: "Agentic systems that survive contact with real users, and the observability to prove it.",
+    title: "AI automation",
+    body: "Your team stops doing the repetitive work, and the business keeps moving.",
     points: [
-      "Natural language to multi-step workflow automation",
-      "RAG, LangChain / LangGraph, tool-grounded agents",
-      "Streaming event architecture (SSE) and latency root-cause work",
-      "LLM cost and token engineering against live production traces",
+      "AI agents that handle support, sales and back-office work",
+      "Plain-English workflow automation with 10+ building blocks",
+      "Invoice, document and voice capture that fills the system for you",
+      "Operations that run around the clock without adding headcount",
     ],
   },
   {
     index: "02",
-    title: "Data and ML",
-    body: "The whole lifecycle, from a page that has not been scraped yet to a model someone trusts.",
+    title: "AI products",
+    body: "From a blank page to a live product people rely on every day.",
     points: [
-      "Multi-source scraping, deduplication, provenance-tracked schemas",
-      "Feature engineering, EDA, statistical modelling",
-      "Ensembles: XGBoost, Random Forest, voting classifiers, SMOTE",
-      "Deep learning and NLP: ANN, transformer sentence embeddings",
+      "Multi-tenant SaaS with enterprise-grade isolation",
+      "Role-based platforms built around how teams work",
+      "Real-time AI experiences that feel instant",
+      "Dashboards and reports decision-makers open every morning",
     ],
   },
   {
     index: "03",
-    title: "Full-stack delivery",
-    body: "Shipping is part of building it: multi-tenant applications, production-grade code, real deploys.",
+    title: "Intelligence and data",
+    body: "Messy data becomes a decision you can defend.",
     points: [
-      "FastAPI, Flask, Elysia / Bun, REST API design",
-      "Next.js, React, TypeScript, Tailwind",
-      "PostgreSQL, MySQL, MongoDB, SQLite: schema design and migrations",
-      "Docker, CI/CD, pytest and Playwright suites, release engineering",
+      "Market and competitor intelligence from scattered sources",
+      "Valuation, pricing and forecasting models with explainable outputs",
+      "Document, voice and image data turned into structured records",
+      "Reporting that shows the evidence behind every number",
     ],
   },
 ];

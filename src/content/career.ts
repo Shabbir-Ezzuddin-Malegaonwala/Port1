@@ -8,17 +8,16 @@ export const experience: ExperienceEntry[] = [
     period: "Sep 2025 – Present",
     location: "Dubai, UAE",
     summary:
-      "Building on an enterprise agentic AI platform: the workflow automation layer, the observability and cost work behind it, and the production code, tests and tooling that keep all of it running reliably at scale.",
+      "Building the AI products and automation behind an enterprise agentic platform, from a sentence-to-workflow assistant to a cost programme that cut AI spend by 67%.",
     highlights: [
-      "Built an agentic assistant that converts natural-language requirements into complete multi-step, node-based automation workflows across a React and Python/FastAPI platform, alongside custom nodes in a 20+ node registry.",
-      "Delivered the Dubai operations platform for an international client (a multi-persona, order-to-billing workflow with team and role-based access) and six end-to-end sales-automation workflows, owning delivery from requirements through to production.",
-      "Led a production LLM cost and observability initiative: instrumented and analysed 340+ live traces and 200+ agent runs, benchmarked four models on identical workloads, and delivered a costed optimisation roadmap.",
-      "Drove a spec-compliance upgrade for the platform's Skill Builder against Anthropic's published skill specification: 18 improvements across 5 files, including a spec validator and a rewritten authoring-rules module, delivered as three pull requests.",
-      "Resolved critical agent-execution and file-handling issues on Workbench, the platform's self-improving AI engineering teammate, shipping the fixes through to production.",
-      "Built out a reusable Playwright action-library for the platform's end-to-end test suite: composable page-object blocks, new coverage for the Workflow and Agent Builder modules, and seed-independent assertions on top of an existing 100+ test suite.",
-      "Ran a full data-analytics engagement over a 51,000+ record dataset: profiling, schema re-architecture, an integrity-gated enrichment pipeline, and a costed buy-versus-build vendor evaluation.",
-      "Shipped and hardened production code in a live multi-service system: a byte-identical event-streaming refactor validated by 13 regression tests, and root-cause analysis of multi-minute latency across chained model pipelines.",
-      "Contributed to an autonomous AI software-engineering agent and an AI skill-authoring framework aligned to a published specification.",
+      "Built an AI assistant that turns a plain-English requirement into a complete, runnable automation workflow, backed by a library of 10+ node types.",
+      "Delivered a Dubai operations platform that runs an international client's order-to-billing lifecycle across nine roles, plus six sales automations.",
+      "Cut AI operating costs by 67% by tracing live production traffic and rebuilding how the platform used models.",
+      "Upgraded the real-time delivery layer behind four AI experiences with zero disruption to users.",
+      "Raised the platform's Skill Builder to the industry's published specification, strengthening security and portability.",
+      "Hardened the platform's AI engineering teammate so agent execution and file handling hold up under real workloads.",
+      "Turned a 51,000-record dataset into a decision-ready asset with a costed buy-versus-build recommendation.",
+      "Built an autonomous AI software-engineering agent and the skill-authoring framework behind it.",
     ],
   },
 ];
@@ -99,7 +98,7 @@ export const stackGroups: StackGroup[] = [
     ],
   },
   {
-    label: "Backend and frontend",
+    label: "Application engineering",
     items: [
       "FastAPI",
       "Flask",
@@ -149,16 +148,17 @@ export const achievements = [
   {
     title: "Smart India Hackathon",
     detail:
-      "Built and presented a data-driven software solution to a judging panel inside a 24-hour window.",
+      "Built a data-driven product prototype and presented it to a national judging panel inside 24 hours.",
   },
   {
-    title: "TCS National Qualifier Test",
-    detail: "Qualified in the TCS National Qualifier Test.",
+    title: "Founder, SEM Corp",
+    detail:
+      "Building AI agents, automation and software products that remove repetitive work for real businesses.",
   },
   {
     title: "Stage host and anchor",
     detail:
-      "Hosted and anchored several annual college programmes, the reason I am comfortable explaining a system to a room that does not read code.",
+      "Hosted several annual college programmes, which is why explaining a complex system to a room feels natural.",
   },
 ];
 
