@@ -10,7 +10,7 @@ export function Capabilities() {
         label="Capabilities"
         title="Three things I am"
         accent="actually good at"
-        lede="Not a list of every technology I have opened. These are the areas where I have shipped something a reviewer signed off on."
+        lede="Not a list of every technology I have opened. These are the areas where I have shipped something real, end to end."
       />
 
       <div className="grid gap-px overflow-hidden border border-hairline bg-hairline md:grid-cols-3">

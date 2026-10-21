@@ -26,8 +26,8 @@ const PRINCIPLES = [
     body: "A system that produces a number nobody can interrogate is a liability. Explainability is not a feature you add at the end; it is a constraint you design against from the start.",
   },
   {
-    title: "Say what it cannot do",
-    body: "Every case study on this site ends with its own limitations. Volunteering them is not modesty, it is the fastest way to a real technical conversation.",
+    title: "Finish what I start",
+    body: "A project that is 90% done is a project nobody can rely on. I would rather ship a smaller scope completely than a larger one half-finished, because the only part of a system that matters is the part that actually works.",
   },
 ];
 

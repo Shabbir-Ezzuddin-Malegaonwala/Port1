@@ -22,7 +22,7 @@ export const profile = {
   bio: [
     "My interest in technology started with a simple question: how can it actually solve a real problem, not just look impressive in a demo? That question took me through a Bachelor's in Computer Applications and then a Master's at MIT World Peace University, and somewhere along the way it turned into a focus on AI and automation specifically.",
     "I spent my first proper year in the field doing the full data lifecycle by hand: scraping, cleaning, feature engineering, building models, and then explaining all of it to people who don't read code. That year taught me something a lot of AI tutorials skip. A model that works in a notebook and a system that works in production are two very different things.",
-    "Right now I am an AI Engineer at Rubikon Labs in Pune, building on an enterprise agentic AI platform. The part of the job I care about most is the unglamorous half: making a model answer correctly, cheaply, and the same way tomorrow as it did today. Anyone can get an agent to respond once. Keeping it honest at scale is the actual work.",
+    "Right now I am an AI Engineer at Rubikon Labs in Pune, building on an enterprise agentic AI platform. The part of the job I care about most is the unglamorous half: making a model answer correctly, cheaply, and the same way tomorrow as it did today. Anyone can get an agent to respond once. Keeping it reliable at scale is the actual work.",
     "Outside the day job, I run SEM Corp, which is really just a name for the same mission stated plainly. Make people's lives simpler through AI agents, automation, and software that removes repetitive work. One touch or one voice, and the result should just appear.",
   ],
 
@@ -52,7 +52,7 @@ export const proofMetrics: Metric[] = [
   {
     value: "Zero",
     label: "Output drift in a refactor merged to production",
-    note: "reviewed by a senior engineer, shipped",
+    note: "zero regressions, shipped clean",
   },
   {
     value: "6 → 1",

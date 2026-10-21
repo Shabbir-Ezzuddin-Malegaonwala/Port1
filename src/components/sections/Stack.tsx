@@ -10,7 +10,7 @@ export function Stack() {
           index="05"
           label="Stack"
           title="The tools, and"
-          accent="only the honest ones"
+          accent="the ones I ship with"
           lede="Everything listed here appears in something I have built. If I have only read about it, it is not on this page."
         />
 

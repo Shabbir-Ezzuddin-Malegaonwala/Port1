@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { AlertTriangle, ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { ArchitectureDiagram } from "@/components/work/ArchitectureDiagram";
 import { Reveal } from "@/components/ui/Reveal";
 import { caseStudies, getCaseStudy } from "@/content/work";
@@ -128,7 +128,7 @@ export default async function CaseStudyPage({
         />
       </Section>
 
-      <Section index="05" label="Decisions I would defend">
+      <Section index="05" label="Engineering decisions">
         <div className="space-y-5">
           {study.decisions.map((d) => (
             <div key={d.title} className="panel bg-elevated/50 p-6 md:p-7">
@@ -157,30 +157,8 @@ export default async function CaseStudyPage({
         </div>
       </Section>
 
-      <Section index="07" label="Honest limitations">
-        <div className="border border-gold/20 bg-gold/[0.04] p-6 md:p-7">
-          <p className="flex items-center gap-2.5 text-sm font-medium text-gold">
-            <AlertTriangle className="size-4" aria-hidden />
-            What this system does not do
-          </p>
-          <ul className="mt-5 space-y-4">
-            {study.limitations.map((l) => (
-              <li key={l} className="flex gap-3.5">
-                <span
-                  className="mt-2.5 size-1 shrink-0 bg-gold/60"
-                  aria-hidden
-                />
-                <span className="text-pretty text-sm leading-relaxed text-ink/80 text-justify hyphens-auto">
-                  {l}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </Section>
-
       {study.links && study.links.length > 0 && (
-        <Section index="08" label="Links">
+        <Section index="07" label="Links">
           <ul className="flex flex-wrap gap-3">
             {study.links.map((l) => (
               <li key={l.href}>

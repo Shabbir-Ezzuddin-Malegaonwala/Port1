@@ -17,7 +17,7 @@ export type CaseStudy = {
   summary: string;
   year: string;
   role: string;
-  /** Shown verbatim on the card and the case page. Keeps framing honest. */
+  /** Shown verbatim on the card and the case page. */
   status: string;
   featured: boolean;
   /** Bento span on the home grid. */
@@ -32,7 +32,6 @@ export type CaseStudy = {
   };
   decisions: { title: string; body: string }[];
   results: Metric[];
-  limitations: string[];
   links?: { label: string; href: string }[];
 };
 

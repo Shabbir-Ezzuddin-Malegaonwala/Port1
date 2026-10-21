@@ -21,7 +21,7 @@ export function SelectedWork() {
         label="Selected work"
         title="Systems I have"
         accent="taken to production"
-        lede="Each of these has a case study behind it: the architecture, the decisions I would defend, the measured results, and what the system still cannot do."
+        lede="Each of these has a full case study behind it: the architecture, the engineering decisions, and the measured results."
       />
 
       <div className="grid gap-5 md:grid-cols-12">

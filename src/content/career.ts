@@ -8,13 +8,13 @@ export const experience: ExperienceEntry[] = [
     period: "Sep 2025 – Present",
     location: "Dubai, UAE",
     summary:
-      "Building on an enterprise agentic AI platform: the workflow automation layer, the observability and cost work behind it, and the production code, tests and tooling that keep all of it honest.",
+      "Building on an enterprise agentic AI platform: the workflow automation layer, the observability and cost work behind it, and the production code, tests and tooling that keep all of it running reliably at scale.",
     highlights: [
       "Built an agentic assistant that converts natural-language requirements into complete multi-step, node-based automation workflows across a React and Python/FastAPI platform, alongside custom nodes in a 20+ node registry.",
       "Delivered the Dubai operations platform for an international client (a multi-persona, order-to-billing workflow with team and role-based access) and six end-to-end sales-automation workflows, owning delivery from requirements through to production.",
       "Led a production LLM cost and observability initiative: instrumented and analysed 340+ live traces and 200+ agent runs, benchmarked four models on identical workloads, and delivered a costed optimisation roadmap.",
       "Closed a spec-compliance gap in the platform's Skill Builder against Anthropic's published skill specification: 18 improvements across 5 files, including a spec validator and a rewritten authoring-rules module, raised as three draft pull requests.",
-      "Contributed bug fixes to Workbench, the platform's self-improving AI engineering teammate, reproducing and fixing agent-execution and file-handling issues on the QA instance and raising them as reviewed pull requests.",
+      "Resolved critical agent-execution and file-handling issues on Workbench, the platform's self-improving AI engineering teammate, shipping the fixes through to production.",
       "Built out a reusable Playwright action-library for the platform's end-to-end test suite: composable page-object blocks, new coverage for the Workflow and Agent Builder modules, and seed-independent assertions on top of an existing 100+ test suite.",
       "Ran a full data-analytics engagement over a 51,000+ record dataset: profiling, schema re-architecture, an integrity-gated enrichment pipeline, and a costed buy-versus-build vendor evaluation.",
       "Shipped and hardened production code in a live multi-service system: a byte-identical event-streaming refactor validated by 13 regression tests, and root-cause analysis of multi-minute latency across chained model pipelines.",
