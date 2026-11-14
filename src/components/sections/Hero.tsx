@@ -16,7 +16,7 @@ export function Hero() {
       <div className="animate-rise mb-10 flex items-center gap-4 border-b border-hairline pb-4">
         <span className="hud text-gold">SEM Corp.</span>
         <span className="hud hidden sm:inline">
-          Ref // AI-ENG · Pune, India
+          Ref // AI-ENG · Pune (India) | Dubai (UAE)
         </span>
         <span className="rule flex-1" aria-hidden />
         <span className="hud">01 / Index</span>

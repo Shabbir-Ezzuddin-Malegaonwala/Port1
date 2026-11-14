@@ -36,7 +36,7 @@ export default function OpengraphImage() {
             textTransform: "uppercase",
           }}
         >
-          Open for projects · Pune, India
+          Open for projects · Pune (India) | Dubai (UAE)
         </div>
       </div>
 

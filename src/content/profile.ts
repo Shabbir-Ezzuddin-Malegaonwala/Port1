@@ -9,7 +9,7 @@ export const profile = {
   initials: "S.M.",
   role: "AI Engineer",
   roleLong: "AI Engineer · AI Products · Automation",
-  location: "Pune, India",
+  location: "Pune (India) | Dubai (UAE)",
   timezone: "Asia/Kolkata",
   available: true,
   availabilityLine: "Available for new projects and consulting work",

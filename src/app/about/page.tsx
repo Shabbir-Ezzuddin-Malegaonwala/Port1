@@ -70,7 +70,7 @@ export default function AboutPage() {
               className="mx-auto h-auto w-full max-w-[280px] object-cover md:max-w-none"
             />
           </div>
-          <p className="hud">Pune, India</p>
+          <p className="hud">Pune (India) | Dubai (UAE)</p>
         </Reveal>
       </div>
 
