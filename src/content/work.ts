@@ -2,12 +2,12 @@ import type { CaseStudy, SideProject } from "@/lib/types";
 
 export const caseStudies: CaseStudy[] = [
   {
-    slug: "digivyapar",
+    slug: "furat",
     index: "01",
-    title: "Digivyapar",
+    title: "FURAT",
     kicker: "The whole business, run from one chat",
     summary:
-      "Digivyapar puts invoicing, inventory, expenses, sales and marketing inside Telegram. A business owner sends a photo, a voice note or a sentence, and the work is done. Live with real businesses, built by a six-person team.",
+      "FURAT puts invoicing, inventory, expenses, sales and marketing inside Telegram. A business owner sends a photo, a voice note or a sentence, and the work is done. Live with real businesses, built by a six-person team.",
     year: "2026",
     role: "AI product lead · six-person team",
     status: "Live with businesses",
@@ -21,7 +21,7 @@ export const caseStudies: CaseStudy[] = [
       "Business operations",
     ],
     context:
-      "India has 63 million MSMEs, and most still run on notebooks, WhatsApp and memory. Owners do not lack ambition; they lack time, and they will not stop to learn another dashboard. Digivyapar gives them one conversation that runs the business.",
+      "India has 63 million MSMEs, and most still run on notebooks, WhatsApp and memory. Owners do not lack ambition; they lack time, and they will not stop to learn another dashboard. FURAT gives them one conversation that runs the business.",
     problem:
       "Every new app is another thing to learn and another place for work to get lost. The product had to live where the owner already is, understand a photo or a spoken sentence, and return a finished business result in seconds.",
     built: [
@@ -92,7 +92,7 @@ export const caseStudies: CaseStudy[] = [
         note: "in a channel owners already use",
       },
     ],
-    links: [{ label: "Visit digivyapar.in", href: "https://digivyapar.in" }],
+    links: [{ label: "Visit furat.io", href: "https://furat.io/" }],
   },
 
   {

@@ -133,7 +133,7 @@ products, a conversational AI platform, an AI hiring intelligence engine, a fina
 centre, and a live SME automation product.
 
 Plus a compact grid of smaller products and experiments: NLP resume screening, Career Coach
-Agent, Pulse, ParkSecure, Digivyapar, stock-market pipeline, the ML model bank, sentiment
+Agent, Pulse, ParkSecure, FURAT, stock-market pipeline, the ML model bank, sentiment
 analysis and food-delivery DBMS.
 
 ### Hard content rules

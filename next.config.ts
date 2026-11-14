@@ -1,6 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/work/digivyapar",
+        destination: "/work/furat",
+        permanent: true,
+      },
+    ];
+  },
   // cacheComponents is off: this site is fully static, so its dynamic-IO rules
   // add build constraints (Suspense around every Date/clock read) for no gain.
   // partialPrefetching depends on it, so that goes too.
